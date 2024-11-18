@@ -1,32 +1,10 @@
 const fs = require("fs");
 const chalk = require("chalk");
 const util = require("../services/util.service");
+const core = require("../services/core.service");
 
 const config = JSON.parse(fs.readFileSync("config.json", "utf-8"));
 const skipTickers = config.skip || [];
-
-function calculatePercentageChangeByInterval(data, currentValue, intervalDays) {
-  if (!data || data.length === 0) return 0;
-
-  const sortedData = [...data].sort((a, b) => a[0] - b[0]);
-  const now = Date.now();
-  const targetTimestamp = now - intervalDays * 24 * 60 * 60 * 1000;
-
-  const targetData = sortedData.reduce((closest, current) => {
-    if (
-      current[0] <= targetTimestamp &&
-      (!closest || current[0] > closest[0])
-    ) {
-      return current;
-    }
-    return closest;
-  }, null);
-
-  if (!targetData) return 0;
-
-  const valueStart = targetData[1];
-  return ((currentValue - valueStart) / valueStart) * 100;
-}
 
 module.exports = {
   register(program) {
@@ -50,32 +28,32 @@ module.exports = {
           if (market_data) {
             const { prices } = market_data;
 
-            const price1D = calculatePercentageChangeByInterval(
+            const price1D = core.calculatePricePctChangeByInterval(
               prices,
               coin.current_price,
               1
             );
-            const price7D = calculatePercentageChangeByInterval(
+            const price7D = core.calculatePricePctChangeByInterval(
               prices,
               coin.current_price,
               7
             );
-            const price14D = calculatePercentageChangeByInterval(
+            const price14D = core.calculatePricePctChangeByInterval(
               prices,
               coin.current_price,
               14
             );
-            const price30D = calculatePercentageChangeByInterval(
+            const price30D = core.calculatePricePctChangeByInterval(
               prices,
               coin.current_price,
               30
             );
-            const price60D = calculatePercentageChangeByInterval(
+            const price60D = core.calculatePricePctChangeByInterval(
               prices,
               coin.current_price,
               60
             );
-            const price90D = calculatePercentageChangeByInterval(
+            const price90D = core.calculatePricePctChangeByInterval(
               prices,
               coin.current_price,
               90

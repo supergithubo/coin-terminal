@@ -27,6 +27,30 @@ function calculateMCapChangeByInterval(
     return (currentMarketCap - mcapStart) / 1e6;
 }
 
+function calculatePricePctChangeByInterval(data, currentPrice, intervalDays) {
+    if (!data || data.length === 0) return 0;
+  
+    const sortedData = [...data].sort((a, b) => a[0] - b[0]);
+    const now = Date.now();
+    const targetTimestamp = now - intervalDays * 24 * 60 * 60 * 1000;
+  
+    const targetData = sortedData.reduce((closest, current) => {
+      if (
+        current[0] <= targetTimestamp &&
+        (!closest || current[0] > closest[0])
+      ) {
+        return current;
+      }
+      return closest;
+    }, null);
+  
+    if (!targetData) return 0;
+  
+    const priceStart = targetData[1];
+    return ((currentPrice - priceStart) / priceStart) * 100;
+  }
+  
+
 function calculateRanks(resultData, intervalKey) {
     const sortedCoins = [...resultData]
         .filter((coin) => coin[intervalKey] > 0)
@@ -79,8 +103,11 @@ function extractMCapAtInterval(data, intervalDays) {
 }
 
 module.exports = {
+    calculatePricePctChangeByInterval,
+
     calculateMCapChangeByInterval,
+    extractMCapAtInterval,
+
     calculateRanks,
     calculateRankChanges,
-    extractMCapAtInterval,
 };
