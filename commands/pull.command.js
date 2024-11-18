@@ -39,12 +39,12 @@ module.exports = {
         }
 
         fs.writeFileSync(
-          "coinsDataWithMarket.json",
+          "data.json",
           JSON.stringify(coins, null, 2),
           "utf-8"
         );
         console.log(
-          'Top 250 coins data with market data has been fetched and saved to "coinsDataWithMarket.json".'
+          'Top 250 coins data with market data has been fetched and saved to "data.json".'
         );
       });
   },

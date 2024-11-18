@@ -37,7 +37,7 @@ module.exports = {
       )
       .action(() => {
         const coinsData = JSON.parse(
-          fs.readFileSync("coinsDataWithMarket.json", "utf-8")
+          fs.readFileSync("data.json", "utf-8")
         );
 
         const resultData = [];
