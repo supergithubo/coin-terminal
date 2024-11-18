@@ -25,16 +25,32 @@ function formatWithCommas(value) {
   });
 }
 
+function formatWithPlusSign(value) {
+  if (value > 0) {
+      return `+${value.toFixed(2)}`;
+  }
+  return value.toFixed(2);
+}
+
 function colorizeAndPadStart(value, padding, noformat) {
   const numValue = parseFloat(value);
-  if (isNaN(numValue)) {
+  const isPercentage = value.toString().endsWith('%'); 
+  if (isNaN(numValue) && !isPercentage) {
     return chalk.white(padStart("N/A", padding));
   }
+
   let formattedValue = formatWithCommas(numValue);
   if (noformat) {
     formattedValue = numValue;
   }
-  if (numValue > 0) {
+
+  if (isPercentage) {
+    formattedValue = `${formattedValue}%`;
+  }
+
+  if (value.toString().startsWith("+")) {
+    return chalk.green(padStart("+" + formattedValue, padding)); 
+  } else if (numValue > 0) {
     return chalk.green(padStart(formattedValue, padding));
   } else if (numValue < 0) {
     return chalk.red(padStart(formattedValue, padding));
@@ -49,5 +65,6 @@ module.exports = {
   pad,
   padStart,
   formatWithCommas,
+  formatWithPlusSign,
   colorizeAndPadStart,
 };

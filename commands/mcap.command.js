@@ -1,101 +1,17 @@
 const fs = require("fs");
 const chalk = require("chalk");
 const util = require("../services/util.service");
+const core = require("../services/core.service");
 
 const config = JSON.parse(fs.readFileSync("config.json", "utf-8"));
 const skipTickers = config.skip || [];
-
-function calculateMarketCapIncreaseByInterval(
-  data,
-  currentMarketCap,
-  intervalDays
-) {
-  if (!data || data.length === 0) return 0;
-
-  const sortedData = [...data].sort((a, b) => a[0] - b[0]);
-  const now = Date.now();
-  const targetTimestamp = now - intervalDays * 24 * 60 * 60 * 1000;
-
-  const targetData = sortedData.reduce((closest, current) => {
-    if (
-      current[0] <= targetTimestamp &&
-      (!closest || current[0] > closest[0])
-    ) {
-      return current;
-    }
-    return closest;
-  }, null);
-
-  if (!targetData) return 0;
-
-  const mcapStart = targetData[1];
-  return (currentMarketCap - mcapStart) / 1e6;
-}
-
-function calculateRanks(resultData, intervalKey) {
-  const sortedCoins = [...resultData]
-    .filter((coin) => coin[intervalKey] > 0)
-    .sort((a, b) => b[intervalKey] - a[intervalKey]);
-
-  sortedCoins.forEach((coin, index) => {
-    coin[`rank_${intervalKey}`] = index + 1;
-  });
-
-  resultData.forEach((coin) => {
-    if (!coin[`rank_${intervalKey}`]) {
-      coin[`rank_${intervalKey}`] = "N/A";
-    }
-  });
-}
-
-function calculateRankChanges(resultData, currentRankKey) {
-  [
-    "mcap_1D",
-    "mcap_7D",
-    "mcap_14D",
-    "mcap_30D",
-    "mcap_60D",
-    "mcap_90D",
-  ].forEach((intervalKey) => {
-    resultData.forEach((coin) => {
-      const currentRank = coin[currentRankKey];
-      const intervalRank = coin[`rank_${intervalKey}`];
-
-      if (currentRank !== "N/A" && intervalRank !== "N/A") {
-        coin[`rank_chg_${intervalKey}`] = intervalRank - currentRank;
-      } else {
-        coin[`rank_chg_${intervalKey}`] = "N/A";
-      }
-    });
-  });
-}
-
-function extractMarketCapAtInterval(data, intervalDays) {
-  if (!data || data.length === 0) return 0;
-
-  const sortedData = [...data].sort((a, b) => a[0] - b[0]);
-  const now = Date.now();
-  const targetTimestamp = now - intervalDays * 24 * 60 * 60 * 1000;
-
-  const targetData = sortedData.reduce((closest, current) => {
-    if (
-      current[0] <= targetTimestamp &&
-      (!closest || current[0] > closest[0])
-    ) {
-      return current;
-    }
-    return closest;
-  }, null);
-
-  return targetData ? targetData[1] : 0;
-}
 
 module.exports = {
   register(program) {
     program
       .command("mcap")
       .description(
-        "Processes data from coinsDataWithMarket.json and calculates market cap changes and rank changes"
+        "Processes data from pulled data and calculates market cap changes and rank changes"
       )
       .action(() => {
         const coinsData = JSON.parse(
@@ -108,44 +24,41 @@ module.exports = {
           if (market_data) {
             const { market_caps } = market_data;
 
-            const mcap_1D = extractMarketCapAtInterval(market_caps, 1);
-            const mcap_7D = extractMarketCapAtInterval(market_caps, 7);
-            const mcap_14D = extractMarketCapAtInterval(market_caps, 14);
-            const mcap_30D = extractMarketCapAtInterval(market_caps, 30);
-            const mcap_60D = extractMarketCapAtInterval(market_caps, 60);
-            const mcap_90D = extractMarketCapAtInterval(market_caps, 90);
+            const mcap_1D = core.extractMCapAtInterval(market_caps, 1);
+            const mcap_7D = core.extractMCapAtInterval(market_caps, 7);
+            const mcap_14D = core.extractMCapAtInterval(market_caps, 14);
+            const mcap_30D = core.extractMCapAtInterval(market_caps, 30);
+            const mcap_60D = core.extractMCapAtInterval(market_caps, 60);
+            const mcap_90D = core.extractMCapAtInterval(market_caps, 90);
 
-            const currentMarketCap = coin.market_cap;
-            const currentRank = coin.market_cap_rank;
-
-            const mcapIncrease1D = calculateMarketCapIncreaseByInterval(
+            const mCapChange1D = core.calculateMCapChangeByInterval(
               market_caps,
-              currentMarketCap,
+              coin.market_cap,
               1
             );
-            const mcapIncrease7D = calculateMarketCapIncreaseByInterval(
+            const mCapChange7D = core.calculateMCapChangeByInterval(
               market_caps,
-              currentMarketCap,
+              coin.market_cap,
               7
             );
-            const mcapIncrease14D = calculateMarketCapIncreaseByInterval(
+            const mCapChange14D = core.calculateMCapChangeByInterval(
               market_caps,
-              currentMarketCap,
+              coin.market_cap,
               14
             );
-            const mcapIncrease30D = calculateMarketCapIncreaseByInterval(
+            const mCapChange30D = core.calculateMCapChangeByInterval(
               market_caps,
-              currentMarketCap,
+              coin.market_cap,
               30
             );
-            const mcapIncrease60D = calculateMarketCapIncreaseByInterval(
+            const mCapChange60D = core.calculateMCapChangeByInterval(
               market_caps,
-              currentMarketCap,
+              coin.market_cap,
               60
             );
-            const mcapIncrease90D = calculateMarketCapIncreaseByInterval(
+            const mCapChange90D = core.calculateMCapChangeByInterval(
               market_caps,
-              currentMarketCap,
+              coin.market_cap,
               90
             );
 
@@ -162,112 +75,119 @@ module.exports = {
               mcap_30D,
               mcap_60D,
               mcap_90D,
-              mcap_chng_1D: mcapIncrease1D.toFixed(2),
-              mcap_chng_7D: mcapIncrease7D.toFixed(2),
-              mcap_chng_14D: mcapIncrease14D.toFixed(2),
-              mcap_chng_30D: mcapIncrease30D.toFixed(2),
-              mcap_chng_60D: mcapIncrease60D.toFixed(2),
-              mcap_chng_90D: mcapIncrease90D.toFixed(2),
+              mcap_chg_1D: util.formatWithPlusSign(mCapChange1D),
+              mcap_chg_7D: util.formatWithPlusSign(mCapChange7D),
+              mcap_chg_14D: util.formatWithPlusSign(mCapChange14D),
+              mcap_chg_30D: util.formatWithPlusSign(mCapChange30D),
+              mcap_chg_60D: util.formatWithPlusSign(mCapChange60D),
+              mcap_chg_90D: util.formatWithPlusSign(mCapChange90D),
             });
           }
         });
 
-        calculateRanks(resultData, "mcap_1D");
-        calculateRanks(resultData, "mcap_7D");
-        calculateRanks(resultData, "mcap_14D");
-        calculateRanks(resultData, "mcap_30D");
-        calculateRanks(resultData, "mcap_60D");
-        calculateRanks(resultData, "mcap_90D");
+        core.calculateRanks(resultData, "mcap_1D");
+        core.calculateRanks(resultData, "mcap_7D");
+        core.calculateRanks(resultData, "mcap_14D");
+        core.calculateRanks(resultData, "mcap_30D");
+        core.calculateRanks(resultData, "mcap_60D");
+        core.calculateRanks(resultData, "mcap_90D");
 
-        calculateRankChanges(resultData, "rank");
+        core.calculateRankChanges(resultData, [
+          "mcap_1D",
+          "mcap_7D",
+          "mcap_14D",
+          "mcap_30D",
+          "mcap_60D",
+          "mcap_90D",
+        ], "rank");
 
         const columnWidths = {
           rank: Math.max(
-            "Rank".length,
-            ...resultData.map((row) => row.rank.toString().length + 1)
+            "rank".length,
+            ...resultData.map((row) => row.rank.toString().length)
           ),
           ticker: Math.max(
-            "Ticker".length,
-            ...resultData.map((row) => row.ticker.length + 1)
+            "ticker".length,
+            ...resultData.map((row) => row.ticker.length)
           ),
 
           market_cap: Math.max(
-            "MCap".length,
-            ...resultData.map((row) => row.market_cap.length + 1)
+            "mcap".length,
+            ...resultData.map((row) => row.market_cap.length)
           ),
-          mcap_chng_1D: Math.max(
-            "MCap 1D".length,
-            ...resultData.map((row) => row.mcap_chng_1D.length + 1)
+          mcap_chg_1D: Math.max(
+            "mcap_1d".length,
+            ...resultData.map((row) => row.mcap_chg_1D.length + 1)
           ),
           rank_chg_mcap_1D: Math.max("Rank 1D".length),
-          mcap_chng_7D: Math.max(
-            "MCap 7D".length,
-            ...resultData.map((row) => row.mcap_chng_7D.length + 1)
+          mcap_chg_7D: Math.max(
+            "mcap_7d".length,
+            ...resultData.map((row) => row.mcap_chg_7D.length + 1)
           ),
           rank_chg_mcap_7D: Math.max("Rank 7D".length),
-          mcap_chng_14D: Math.max(
-            "MCap 14D".length,
-            ...resultData.map((row) => row.mcap_chng_14D.length + 1)
+          mcap_chg_14D: Math.max(
+            "mcap_14d".length,
+            ...resultData.map((row) => row.mcap_chg_14D.length + 1)
           ),
           rank_chg_mcap_14D: Math.max("Rank 14D".length),
-          mcap_chng_30D: Math.max(
-            "MCap 30D".length,
-            ...resultData.map((row) => row.mcap_chng_30D.length + 1)
+          mcap_chg_30D: Math.max(
+            "mcap_30d".length,
+            ...resultData.map((row) => row.mcap_chg_30D.length + 1)
           ),
           rank_chg_mcap_30D: Math.max("Rank 30D".length),
-          mcap_chng_60D: Math.max(
-            "MCap 60D".length,
-            ...resultData.map((row) => row.mcap_chng_60D.length + 1)
+          mcap_chg_60D: Math.max(
+            "mcap_60d".length,
+            ...resultData.map((row) => row.mcap_chg_60D.length + 1)
           ),
           rank_chg_mcap_60D: Math.max("Rank 60D".length),
-          mcap_chng_90D: Math.max(
-            "MCap 90D".length,
-            ...resultData.map((row) => row.mcap_chng_90D.length + 1)
+          mcap_chg_90D: Math.max(
+            "mcap_90d".length,
+            ...resultData.map((row) => row.mcap_chg_90D.length + 1)
           ),
           rank_chg_mcap_90D: Math.max("Rank 90D".length),
         };
 
         console.log(
-          `${chalk.white(util.pad("Rank", columnWidths.rank))} | ` +
-            `${chalk.yellow(util.pad("Ticker", columnWidths.ticker))} | ` +
+          `${chalk.white(util.pad("rank", columnWidths.rank))} | ` +
+            `${chalk.yellow(util.pad("ticker", columnWidths.ticker))} | ` +
             `${chalk.magenta(
-              util.padStart("MCap", columnWidths.market_cap)
+              util.padStart("mcap", columnWidths.market_cap)
             )} | ` +
             `${chalk.magenta(
-              util.padStart("MCap 1D", columnWidths.mcap_chng_1D)
+              util.padStart("mcap_1d", columnWidths.mcap_chg_1D)
             )} | ` +
             `${chalk.magenta(
-              util.padStart("Rank 1D", columnWidths.mcap_rank_1D)
+              util.padStart("rank_1d", columnWidths.mcap_rank_1D)
             )} | ` +
             `${chalk.magenta(
-              util.padStart("MCap 7D", columnWidths.mcap_chng_7D)
+              util.padStart("mcap_7d", columnWidths.mcap_chg_7D)
             )} | ` +
             `${chalk.magenta(
-              util.padStart("Rank 7D", columnWidths.mcap_rank_7D)
+              util.padStart("rank_7d", columnWidths.mcap_rank_7D)
             )} | ` +
             `${chalk.magenta(
-              util.padStart("MCap 14D", columnWidths.mcap_chng_14D)
+              util.padStart("mcap_14d", columnWidths.mcap_chg_14D)
             )} | ` +
             `${chalk.magenta(
-              util.padStart("Rank 14D", columnWidths.mcap_rank_14D)
+              util.padStart("rank_14d", columnWidths.mcap_rank_14D)
             )} | ` +
             `${chalk.magenta(
-              util.padStart("MCap 30D", columnWidths.mcap_chng_30D)
+              util.padStart("mcap_30d", columnWidths.mcap_chg_30D)
             )} | ` +
             `${chalk.magenta(
-              util.padStart("Rank 30D", columnWidths.mcap_rank_30D)
+              util.padStart("rank_30d", columnWidths.mcap_rank_30D)
             )} | ` +
             `${chalk.magenta(
-              util.padStart("MCap 60D", columnWidths.mcap_chng_60D)
+              util.padStart("mcap_60d", columnWidths.mcap_chg_60D)
             )} | ` +
             `${chalk.magenta(
-              util.padStart("Rank 60D", columnWidths.mcap_rank_60D)
+              util.padStart("rank_60d", columnWidths.mcap_rank_60D)
             )} | ` +
             `${chalk.magenta(
-              util.padStart("MCap 90D", columnWidths.mcap_chng_90D)
+              util.padStart("mcap_90d", columnWidths.mcap_chg_90D)
             )} | ` +
             `${chalk.magenta(
-              util.padStart("Rank 90D", columnWidths.mcap_rank_90D)
+              util.padStart("rank_90d", columnWidths.mcap_rank_90D)
             )} | `
         );
 
@@ -283,8 +203,8 @@ module.exports = {
                 util.padStart(row.market_cap, columnWidths.market_cap)
               )} | ` +
               `${util.colorizeAndPadStart(
-                row.mcap_chng_1D,
-                columnWidths.mcap_chng_1D
+                row.mcap_chg_1D,
+                columnWidths.mcap_chg_1D
               )} | ` +
               `${util.colorizeAndPadStart(
                 row.rank_chg_mcap_1D,
@@ -292,8 +212,8 @@ module.exports = {
                 true
               )} | ` +
               `${util.colorizeAndPadStart(
-                row.mcap_chng_7D,
-                columnWidths.mcap_chng_7D
+                row.mcap_chg_7D,
+                columnWidths.mcap_chg_7D
               )} | ` +
               `${util.colorizeAndPadStart(
                 row.rank_chg_mcap_7D,
@@ -301,8 +221,8 @@ module.exports = {
                 true
               )} | ` +
               `${util.colorizeAndPadStart(
-                row.mcap_chng_14D,
-                columnWidths.mcap_chng_14D
+                row.mcap_chg_14D,
+                columnWidths.mcap_chg_14D
               )} | ` +
               `${util.colorizeAndPadStart(
                 row.rank_chg_mcap_14D,
@@ -310,8 +230,8 @@ module.exports = {
                 true
               )} | ` +
               `${util.colorizeAndPadStart(
-                row.mcap_chng_30D,
-                columnWidths.mcap_chng_30D
+                row.mcap_chg_30D,
+                columnWidths.mcap_chg_30D
               )} | ` +
               `${util.colorizeAndPadStart(
                 row.rank_chg_mcap_30D,
@@ -319,8 +239,8 @@ module.exports = {
                 true
               )} | ` +
               `${util.colorizeAndPadStart(
-                row.mcap_chng_60D,
-                columnWidths.mcap_chng_60D
+                row.mcap_chg_60D,
+                columnWidths.mcap_chg_60D
               )} | ` +
               `${util.colorizeAndPadStart(
                 row.rank_chg_mcap_60D,
@@ -328,8 +248,8 @@ module.exports = {
                 true
               )} | ` +
               `${util.colorizeAndPadStart(
-                row.mcap_chng_90D,
-                columnWidths.mcap_chng_90D
+                row.mcap_chg_90D,
+                columnWidths.mcap_chg_90D
               )} | ` +
               `${util.colorizeAndPadStart(
                 row.rank_chg_mcap_90D,

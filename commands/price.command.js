@@ -33,7 +33,7 @@ module.exports = {
     program
       .command("price")
       .description(
-        "Processes data from coinsDataWithMarket.json and calculates price changes"
+        "Processes data from pulled data and calculates price changes"
       )
       .action(() => {
         const coinsData = JSON.parse(
@@ -50,36 +50,34 @@ module.exports = {
           if (market_data) {
             const { prices } = market_data;
 
-            const currentPrice = coin.current_price;
-
             const price1D = calculatePercentageChangeByInterval(
               prices,
-              currentPrice,
+              coin.current_price,
               1
             );
             const price7D = calculatePercentageChangeByInterval(
               prices,
-              currentPrice,
+              coin.current_price,
               7
             );
             const price14D = calculatePercentageChangeByInterval(
               prices,
-              currentPrice,
+              coin.current_price,
               14
             );
             const price30D = calculatePercentageChangeByInterval(
               prices,
-              currentPrice,
+              coin.current_price,
               30
             );
             const price60D = calculatePercentageChangeByInterval(
               prices,
-              currentPrice,
+              coin.current_price,
               60
             );
             const price90D = calculatePercentageChangeByInterval(
               prices,
-              currentPrice,
+              coin.current_price,
               90
             );
 
@@ -87,77 +85,77 @@ module.exports = {
               rank: coin.market_cap_rank,
               ticker: coin.symbol.toUpperCase(),
 
-              price: util.formatWithCommas(currentPrice.toFixed(2)),
-              price_1D: price1D.toFixed(2),
-              price_7D: price7D.toFixed(2),
-              price_14D: price14D.toFixed(2),
-              price_30D: price30D.toFixed(2),
-              price_60D: price60D.toFixed(2),
-              price_90D: price90D.toFixed(2),
+              price: util.formatWithCommas(coin.current_price.toFixed(2)),
+              price_1D: util.formatWithPlusSign(price1D),
+              price_7D: util.formatWithPlusSign(price7D),
+              price_14D: util.formatWithPlusSign(price14D),
+              price_30D: util.formatWithPlusSign(price30D),
+              price_60D: util.formatWithPlusSign(price60D),
+              price_90D: util.formatWithPlusSign(price90D),
             });
           }
         });
 
         const columnWidths = {
           rank: Math.max(
-            "Rank".length,
-            ...resultData.map((row) => row.rank.toString().length + 1)
+            "rank".length,
+            ...resultData.map((row) => row.rank.toString().length)
           ),
           ticker: Math.max(
-            "Ticker".length,
-            ...resultData.map((row) => row.ticker.length + 1)
+            "ticker".length,
+            ...resultData.map((row) => row.ticker.length)
           ),
 
           price: Math.max(
-            "Price".length,
-            ...resultData.map((row) => row.price.length + 1)
+            "price".length,
+            ...resultData.map((row) => row.price.length)
           ),
           price_1D: Math.max(
-            "Price 1D".length,
-            ...resultData.map((row) => row.price_1D.length + 1)
+            "price_1d".length,
+            ...resultData.map((row) => row.price_1D.length + 2)
           ),
           price_7D: Math.max(
-            "Price 7D".length,
-            ...resultData.map((row) => row.price_7D.length + 1)
+            "price_7d".length,
+            ...resultData.map((row) => row.price_7D.length + 2)
           ),
           price_14D: Math.max(
-            "Price 14D".length,
-            ...resultData.map((row) => row.price_14D.length + 1)
+            "price_14d".length,
+            ...resultData.map((row) => row.price_14D.length + 2)
           ),
           price_30D: Math.max(
-            "Price 30D".length,
-            ...resultData.map((row) => row.price_30D.length + 1)
+            "price_30d".length,
+            ...resultData.map((row) => row.price_30D.length + 2)
           ),
           price_60D: Math.max(
-            "Price 60D".length,
-            ...resultData.map((row) => row.price_60D.length + 1)
+            "price_60d".length,
+            ...resultData.map((row) => row.price_60D.length + 2)
           ),
           price_90D: Math.max(
-            "Price 90D".length,
-            ...resultData.map((row) => row.price_90D.length + 1)
+            "price_90d".length,
+            ...resultData.map((row) => row.price_90D.length + 2)
           ),
         };
 
         console.log(
-          `${chalk.white(util.pad("Rank", columnWidths.rank))} | ` +
-            `${chalk.yellow(util.pad("Ticker", columnWidths.ticker))} | ` +
-            `${chalk.cyan(util.padStart("Price", columnWidths.price))} | ` +
+          `${chalk.white(util.pad("rank", columnWidths.rank))} | ` +
+            `${chalk.yellow(util.pad("ticker", columnWidths.ticker))} | ` +
+            `${chalk.cyan(util.padStart("price", columnWidths.price))} | ` +
             `${chalk.white(
-              util.padStart("Price 1D", columnWidths.price_1D)
+              util.padStart("price_1d", columnWidths.price_1D)
             )} | ` +
             `${chalk.white(
-              util.padStart("Price 7D", columnWidths.price_7D)
+              util.padStart("price_7d", columnWidths.price_7D)
             )} | ` +
             `${chalk.white(
-              util.padStart("Price 14D", columnWidths.price_14D)
+              util.padStart("price_14d", columnWidths.price_14D)
             )} | ` +
             `${chalk.white(
-              util.padStart("Price 30D", columnWidths.price_30D)
+              util.padStart("price_30d", columnWidths.price_30D)
             )} | ` +
             `${chalk.white(
-              util.padStart("Price 60D", columnWidths.price_60D)
+              util.padStart("price_60d", columnWidths.price_60D)
             )} | ` +
-            `${chalk.white(util.padStart("Price 90D", columnWidths.price_90D))}`
+            `${chalk.white(util.padStart("price_90d", columnWidths.price_90D))}`
         );
 
         resultData.forEach((row) => {
@@ -166,29 +164,29 @@ module.exports = {
               `${chalk.yellow(util.pad(row.ticker, columnWidths.ticker))} | ` +
               `${chalk.cyan(util.padStart(row.price, columnWidths.price))} | ` +
               `${util.colorizeAndPadStart(
-                row.price_1D,
+                row.price_1D + '%',
                 columnWidths.price_1D
               )} | ` +
               `${util.colorizeAndPadStart(
-                row.price_7D,
+                row.price_7D + '%',
                 columnWidths.price_7D
               )} | ` +
               `${util.colorizeAndPadStart(
-                row.price_14D,
+                row.price_14D + '%',
                 columnWidths.price_14D
               )} | ` +
               `${util.colorizeAndPadStart(
-                row.price_30D,
+                row.price_30D + '%',
                 columnWidths.price_30D
               )} | ` +
               `${util.colorizeAndPadStart(
-                row.price_60D,
+                row.price_60D + '%',
                 columnWidths.price_60D
               )} | ` +
               `${util.colorizeAndPadStart(
-                row.price_90D,
+                row.price_90D + '%',
                 columnWidths.price_90D
-              )}`
+              )} |`
           );
         });
       });
