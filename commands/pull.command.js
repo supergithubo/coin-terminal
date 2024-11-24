@@ -38,13 +38,9 @@ module.exports = {
           await util.sleep(500);
         }
 
-        fs.writeFileSync(
-          "data.json",
-          JSON.stringify(coins, null, 2),
-          "utf-8"
-        );
+        fs.writeFileSync("data.json", JSON.stringify(coins, null, 2), "utf-8");
         console.log(
-          'Top 250 coins data with market data has been fetched and saved to "data.json".'
+          'Top 250 coins data with data has been fetched and saved to "data.json".'
         );
       });
   },
