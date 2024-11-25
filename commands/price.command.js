@@ -5,6 +5,14 @@ const core = require("../services/core.service");
 
 const config = JSON.parse(fs.readFileSync("config.json", "utf-8"));
 const skipTickers = config.skip || [];
+const validSortColumns = [
+  "price_1d",
+  "price_7d",
+  "price_14d",
+  "price_30d",
+  "price_60d",
+  "price_90d",
+];
 
 module.exports = {
   register(program) {
@@ -13,12 +21,19 @@ module.exports = {
       .description(
         "Processes data from pulled data and calculates price changes"
       )
-      .action(() => {
-        const coinsData = JSON.parse(
-          fs.readFileSync("data.json", "utf-8")
-        );
+      .option(
+        "--sort <column>",
+        "Sort by specified column (e.g., price, price_1d, price_7d, price_30d, price_60d, price_90d)"
+      )
+      .option(
+        "--order <asc|desc>",
+        "Specify sorting order: 'asc' for ascending, 'desc' for descending (default: 'desc')",
+        "desc"
+      )
+      .action((options) => {
+        const coinsData = JSON.parse(fs.readFileSync("data.json", "utf-8"));
 
-        const resultData = [];
+        let resultData = [];
         coinsData.forEach((coin) => {
           if (skipTickers.includes(coin.symbol.toUpperCase())) {
             return;
@@ -28,32 +43,32 @@ module.exports = {
           if (market_data) {
             const { prices } = market_data;
 
-            const price1D = core.calculatePricePctChangeByInterval(
+            const price1d = core.calculatePricePctChangeByInterval(
               prices,
               coin.current_price,
               1
             );
-            const price7D = core.calculatePricePctChangeByInterval(
+            const price7d = core.calculatePricePctChangeByInterval(
               prices,
               coin.current_price,
               7
             );
-            const price14D = core.calculatePricePctChangeByInterval(
+            const price14d = core.calculatePricePctChangeByInterval(
               prices,
               coin.current_price,
               14
             );
-            const price30D = core.calculatePricePctChangeByInterval(
+            const price30d = core.calculatePricePctChangeByInterval(
               prices,
               coin.current_price,
               30
             );
-            const price60D = core.calculatePricePctChangeByInterval(
+            const price60d = core.calculatePricePctChangeByInterval(
               prices,
               coin.current_price,
               60
             );
-            const price90D = core.calculatePricePctChangeByInterval(
+            const price90d = core.calculatePricePctChangeByInterval(
               prices,
               coin.current_price,
               90
@@ -62,17 +77,38 @@ module.exports = {
             resultData.push({
               rank: coin.market_cap_rank,
               ticker: coin.symbol.toUpperCase(),
-
               price: util.formatWithCommas(coin.current_price.toFixed(2)),
-              price_1D: util.formatWithPlusSign(price1D),
-              price_7D: util.formatWithPlusSign(price7D),
-              price_14D: util.formatWithPlusSign(price14D),
-              price_30D: util.formatWithPlusSign(price30D),
-              price_60D: util.formatWithPlusSign(price60D),
-              price_90D: util.formatWithPlusSign(price90D),
+              mcap: util.formatWithCommas(
+                (coin.market_cap / 1e6).toFixed(2)
+              ),
+              float: (coin.market_cap / coin.fully_diluted_valuation).toFixed(2),
+
+              price_1d: util.formatWithPlusSign(price1d),
+              price_7d: util.formatWithPlusSign(price7d),
+              price_14d: util.formatWithPlusSign(price14d),
+              price_30d: util.formatWithPlusSign(price30d),
+              price_60d: util.formatWithPlusSign(price60d),
+              price_90d: util.formatWithPlusSign(price90d),
             });
           }
         });
+
+        if (options.sort && !validSortColumns.includes(options.sort)) {
+          console.log(
+            chalk.red(
+              `Invalid sort column: ${
+                options.sort
+              }. Valid columns are: ${validSortColumns.join(", ")}`
+            )
+          );
+          return;
+        }
+
+        if (options.sort) {
+          const sortColumn = options.sort.toLowerCase();
+          const isAscending = options.order === "asc";
+          util.sort(resultData, sortColumn, isAscending);
+        }
 
         const columnWidths = {
           rank: Math.max(
@@ -83,34 +119,42 @@ module.exports = {
             "ticker".length,
             ...resultData.map((row) => row.ticker.length)
           ),
-
           price: Math.max(
             "price".length,
             ...resultData.map((row) => row.price.length)
           ),
-          price_1D: Math.max(
+          mcap: Math.max(
+            "mcap".length,
+            ...resultData.map((row) => row.mcap.length)
+          ),
+          float: Math.max(
+            "float".length,
+            ...resultData.map((row) => row.float.length)
+          ),
+          
+          price_1d: Math.max(
             "price_1d".length,
-            ...resultData.map((row) => row.price_1D.length + 2)
+            ...resultData.map((row) => row.price_1d.length + 2)
           ),
-          price_7D: Math.max(
+          price_7d: Math.max(
             "price_7d".length,
-            ...resultData.map((row) => row.price_7D.length + 2)
+            ...resultData.map((row) => row.price_7d.length + 2)
           ),
-          price_14D: Math.max(
+          price_14d: Math.max(
             "price_14d".length,
-            ...resultData.map((row) => row.price_14D.length + 2)
+            ...resultData.map((row) => row.price_14d.length + 2)
           ),
-          price_30D: Math.max(
+          price_30d: Math.max(
             "price_30d".length,
-            ...resultData.map((row) => row.price_30D.length + 2)
+            ...resultData.map((row) => row.price_30d.length + 2)
           ),
-          price_60D: Math.max(
+          price_60d: Math.max(
             "price_60d".length,
-            ...resultData.map((row) => row.price_60D.length + 2)
+            ...resultData.map((row) => row.price_60d.length + 2)
           ),
-          price_90D: Math.max(
+          price_90d: Math.max(
             "price_90d".length,
-            ...resultData.map((row) => row.price_90D.length + 2)
+            ...resultData.map((row) => row.price_90d.length + 2)
           ),
         };
 
@@ -118,22 +162,25 @@ module.exports = {
           `${chalk.white(util.pad("rank", columnWidths.rank))} | ` +
             `${chalk.yellow(util.pad("ticker", columnWidths.ticker))} | ` +
             `${chalk.cyan(util.padStart("price", columnWidths.price))} | ` +
+            `${chalk.cyan(util.padStart("mcap", columnWidths.mcap))} | ` +
+            `${chalk.cyan(util.padStart("float", columnWidths.float))} | ` +
+            
             `${chalk.white(
-              util.padStart("price_1d", columnWidths.price_1D)
+              util.padStart("price_1d", columnWidths.price_1d)
             )} | ` +
             `${chalk.white(
-              util.padStart("price_7d", columnWidths.price_7D)
+              util.padStart("price_7d", columnWidths.price_7d)
             )} | ` +
             `${chalk.white(
-              util.padStart("price_14d", columnWidths.price_14D)
+              util.padStart("price_14d", columnWidths.price_14d)
             )} | ` +
             `${chalk.white(
-              util.padStart("price_30d", columnWidths.price_30D)
+              util.padStart("price_30d", columnWidths.price_30d)
             )} | ` +
             `${chalk.white(
-              util.padStart("price_60d", columnWidths.price_60D)
+              util.padStart("price_60d", columnWidths.price_60d)
             )} | ` +
-            `${chalk.white(util.padStart("price_90d", columnWidths.price_90D))}`
+            `${chalk.white(util.padStart("price_90d", columnWidths.price_90d))}`
         );
 
         resultData.forEach((row) => {
@@ -141,29 +188,32 @@ module.exports = {
             `${chalk.white(util.pad(row.rank, columnWidths.rank))} | ` +
               `${chalk.yellow(util.pad(row.ticker, columnWidths.ticker))} | ` +
               `${chalk.cyan(util.padStart(row.price, columnWidths.price))} | ` +
+              `${chalk.cyan(util.padStart(row.mcap, columnWidths.mcap))} | ` +
+              `${chalk.cyan(util.padStart(row.float, columnWidths.float))} | ` +
+              
               `${util.colorizeAndPadStart(
-                row.price_1D + '%',
-                columnWidths.price_1D
+                row.price_1d + "%",
+                columnWidths.price_1d
               )} | ` +
               `${util.colorizeAndPadStart(
-                row.price_7D + '%',
-                columnWidths.price_7D
+                row.price_7d + "%",
+                columnWidths.price_7d
               )} | ` +
               `${util.colorizeAndPadStart(
-                row.price_14D + '%',
-                columnWidths.price_14D
+                row.price_14d + "%",
+                columnWidths.price_14d
               )} | ` +
               `${util.colorizeAndPadStart(
-                row.price_30D + '%',
-                columnWidths.price_30D
+                row.price_30d + "%",
+                columnWidths.price_30d
               )} | ` +
               `${util.colorizeAndPadStart(
-                row.price_60D + '%',
-                columnWidths.price_60D
+                row.price_60d + "%",
+                columnWidths.price_60d
               )} | ` +
               `${util.colorizeAndPadStart(
-                row.price_90D + '%',
-                columnWidths.price_90D
+                row.price_90d + "%",
+                columnWidths.price_90d
               )} |`
           );
         });

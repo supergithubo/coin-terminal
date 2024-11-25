@@ -27,14 +27,14 @@ function formatWithCommas(value) {
 
 function formatWithPlusSign(value) {
   if (value > 0) {
-      return `+${value.toFixed(2)}`;
+    return `+${value.toFixed(2)}`;
   }
   return value.toFixed(2);
 }
 
 function colorizeAndPadStart(value, padding, noformat) {
   const numValue = parseFloat(value);
-  const isPercentage = value.toString().endsWith('%'); 
+  const isPercentage = value.toString().endsWith("%");
   if (isNaN(numValue) && !isPercentage) {
     return chalk.white(padStart("N/A", padding));
   }
@@ -49,7 +49,7 @@ function colorizeAndPadStart(value, padding, noformat) {
   }
 
   if (value.toString().startsWith("+")) {
-    return chalk.green(padStart("+" + formattedValue, padding)); 
+    return chalk.green(padStart("+" + formattedValue, padding));
   } else if (numValue > 0) {
     return chalk.green(padStart(formattedValue, padding));
   } else if (numValue < 0) {
@@ -57,6 +57,18 @@ function colorizeAndPadStart(value, padding, noformat) {
   } else {
     return chalk.white(padStart(formattedValue, padding));
   }
+}
+
+function sort(resultData, sortColumn, isAscending) {
+  resultData.sort((a, b) => {
+    const valA = parseFloat(
+      a[sortColumn].replace(/,/g, "").replace(/^\+/, "").replace("N/A", "0")
+    );
+    const valB = parseFloat(
+      b[sortColumn].replace(/,/g, "").replace(/^\+/, "").replace("N/A", "0")
+    );
+    return isAscending ? valA - valB : valB - valA;
+  });
 }
 
 module.exports = {
@@ -67,4 +79,5 @@ module.exports = {
   formatWithCommas,
   formatWithPlusSign,
   colorizeAndPadStart,
+  sort,
 };

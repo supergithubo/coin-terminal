@@ -23,6 +23,18 @@ async function getTop250Coins() {
   return coins;
 }
 
+async function getCoinData(coinId) {
+  const url = `https://api.coingecko.com/api/v3/coins/${coinId}`;
+
+  try {
+    const response = await axios.get(url, { headers: headers });
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching coin data for ${coinId}:`, error.message);
+    return null;
+  }
+}
+
 async function getMarketData(coinId) {
   const url = `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=100&interval=daily`;
 
@@ -37,5 +49,6 @@ async function getMarketData(coinId) {
 
 module.exports = {
   getTop250Coins,
+  getCoinData,
   getMarketData,
 };
