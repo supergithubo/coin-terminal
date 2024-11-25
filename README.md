@@ -51,6 +51,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
   - `reqPerMin` | `default: 25` - increase base on your Coingecko subscription (max: 30 when using demo api key)
   - `skip` - coins/tokens to skip for displaying (ex: "USDT", "USDC", "WBTC")
 
+2) Save it as `config.json`
+
 ### Commands
 
 Use `node cli.js --help` for the commands
