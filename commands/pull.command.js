@@ -2,6 +2,8 @@ const fs = require("fs");
 const coingecko = require("../services/coingecko.service");
 const util = require("../services/util.service");
 
+const config = JSON.parse(fs.readFileSync("config.json", "utf-8"));
+
 module.exports = {
   register(program) {
     program
@@ -12,7 +14,7 @@ module.exports = {
 
         let requestCount = 0;
         let batchCount = 0;
-        const maxRequests = 25;
+        const maxRequests = config.reqPerMin;
 
         for (const coin of coins) {
           if (requestCount >= maxRequests) {

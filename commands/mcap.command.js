@@ -6,7 +6,6 @@ const core = require("../services/core.service");
 const config = JSON.parse(fs.readFileSync("config.json", "utf-8"));
 const skipTickers = config.skip || [];
 const validSortColumns = [
-  "mcap",
   "mcap_1d",
   "mcap_7d",
   "mcap_14d",
@@ -30,11 +29,11 @@ module.exports = {
       )
       .option(
         "--sort <column>",
-        "Sort by specified column (e.g., price, price_1d, price_7d, price_30d, price_60d, price_90d)"
+        "Sort by specified column (e.g., mcap_1d, mcap_7d, mcap_30d, mcap_60d, mcap_90d, rank_1d, rank_7d, rank_30d, rank_60d, rank_90d)"
       )
       .option(
         "--order <asc|desc>",
-        "Specify sorting order: 'asc' for ascending, 'desc' for descending (default: 'desc')",
+        "Specify sorting order: 'asc' for ascending, 'desc' for descending",
         "desc"
       )
       .action((options) => {

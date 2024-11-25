@@ -23,11 +23,11 @@ module.exports = {
       )
       .option(
         "--sort <column>",
-        "Sort by specified column (e.g., price, price_1d, price_7d, price_30d, price_60d, price_90d)"
+        "Sort by specified column (e.g., price_1d, price_7d, price_30d, price_60d, price_90d)"
       )
       .option(
         "--order <asc|desc>",
-        "Specify sorting order: 'asc' for ascending, 'desc' for descending (default: 'desc')",
+        "Specify sorting order: 'asc' for ascending, 'desc' for descending",
         "desc"
       )
       .action((options) => {
