@@ -87,10 +87,12 @@ module.exports = {
             resultData.push({
               rank: coin.market_cap_rank,
               ticker: coin.symbol.toUpperCase(),
-
+              price: util.formatWithCommas(coin.current_price.toFixed(2)),
               market_cap: util.formatWithCommas(
                 (coin.market_cap / 1e6).toFixed(2)
               ),
+              float: (coin.market_cap / coin.fully_diluted_valuation).toFixed(2),
+              
               mcap_1d,
               mcap_7d,
               mcap_14d,
@@ -130,7 +132,10 @@ module.exports = {
         resultData = resultData.map((row) => ({
           rank: row.rank,
           ticker: row.ticker,
+          price: row.price,
           mcap: row.market_cap,
+          float: row.float,
+
           mcap_1d: row.mcap_chg_1d,
           mcap_7d: row.mcap_chg_7d,
           mcap_14d: row.mcap_chg_14d,
@@ -171,11 +176,19 @@ module.exports = {
             "ticker".length,
             ...resultData.map((row) => row.ticker.length)
           ),
-
+          price: Math.max(
+            "price".length,
+            ...resultData.map((row) => row.price.length)
+          ),
           mcap: Math.max(
             "mcap".length,
             ...resultData.map((row) => row.mcap.length)
           ),
+          float: Math.max(
+            "float".length,
+            ...resultData.map((row) => row.float.length)
+          ),
+
           mcap_1d: Math.max(
             "mcap_1d".length,
             ...resultData.map((row) => row.mcap_1d.length + 1)
@@ -211,41 +224,44 @@ module.exports = {
         console.log(
           `${chalk.white(util.pad("rank", columnWidths.rank))} | ` +
             `${chalk.yellow(util.pad("ticker", columnWidths.ticker))} | ` +
-            `${chalk.magenta(util.padStart("mcap", columnWidths.mcap))} | ` +
-            `${chalk.magenta(
+            `${chalk.cyan(util.padStart("price", columnWidths.price))} | ` +
+            `${chalk.cyan(util.padStart("mcap", columnWidths.mcap))} | ` +
+            `${chalk.cyan(util.padStart("float", columnWidths.float))} | ` +
+
+            `${chalk.white(
               util.padStart("mcap_1d", columnWidths.mcap_1d)
             )} | ` +
-            `${chalk.magenta(
+            `${chalk.white(
               util.padStart("rank_1d", columnWidths.rank_1d)
             )} | ` +
-            `${chalk.magenta(
+            `${chalk.white(
               util.padStart("mcap_7d", columnWidths.mcap_7d)
             )} | ` +
-            `${chalk.magenta(
+            `${chalk.white(
               util.padStart("rank_7d", columnWidths.rank_7d)
             )} | ` +
-            `${chalk.magenta(
+            `${chalk.white(
               util.padStart("mcap_14d", columnWidths.mcap_14d)
             )} | ` +
-            `${chalk.magenta(
+            `${chalk.white(
               util.padStart("rank_14d", columnWidths.rank_14d)
             )} | ` +
-            `${chalk.magenta(
+            `${chalk.white(
               util.padStart("mcap_30d", columnWidths.mcap_30d)
             )} | ` +
-            `${chalk.magenta(
+            `${chalk.white(
               util.padStart("rank_30d", columnWidths.rank_30d)
             )} | ` +
-            `${chalk.magenta(
+            `${chalk.white(
               util.padStart("mcap_60d", columnWidths.mcap_60d)
             )} | ` +
-            `${chalk.magenta(
+            `${chalk.white(
               util.padStart("rank_60d", columnWidths.rank_60d)
             )} | ` +
-            `${chalk.magenta(
+            `${chalk.white(
               util.padStart("mcap_90d", columnWidths.mcap_90d)
             )} | ` +
-            `${chalk.magenta(
+            `${chalk.white(
               util.padStart("rank_90d", columnWidths.rank_90d)
             )} | `
         );
@@ -258,7 +274,10 @@ module.exports = {
           console.log(
             `${chalk.white(util.pad(row.rank, columnWidths.rank))} | ` +
               `${chalk.yellow(util.pad(row.ticker, columnWidths.ticker))} | ` +
+              `${chalk.cyan(util.padStart(row.price, columnWidths.price))} | ` +
               `${chalk.cyan(util.padStart(row.mcap, columnWidths.mcap))} | ` +
+              `${chalk.cyan(util.padStart(row.float, columnWidths.float))} | ` +
+
               `${util.colorizeAndPadStart(
                 row.mcap_1d,
                 columnWidths.mcap_1d

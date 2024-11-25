@@ -77,8 +77,12 @@ module.exports = {
             resultData.push({
               rank: coin.market_cap_rank,
               ticker: coin.symbol.toUpperCase(),
-
               price: util.formatWithCommas(coin.current_price.toFixed(2)),
+              mcap: util.formatWithCommas(
+                (coin.market_cap / 1e6).toFixed(2)
+              ),
+              float: (coin.market_cap / coin.fully_diluted_valuation).toFixed(2),
+
               price_1d: util.formatWithPlusSign(price1d),
               price_7d: util.formatWithPlusSign(price7d),
               price_14d: util.formatWithPlusSign(price14d),
@@ -115,11 +119,19 @@ module.exports = {
             "ticker".length,
             ...resultData.map((row) => row.ticker.length)
           ),
-
           price: Math.max(
             "price".length,
             ...resultData.map((row) => row.price.length)
           ),
+          mcap: Math.max(
+            "mcap".length,
+            ...resultData.map((row) => row.mcap.length)
+          ),
+          float: Math.max(
+            "float".length,
+            ...resultData.map((row) => row.float.length)
+          ),
+          
           price_1d: Math.max(
             "price_1d".length,
             ...resultData.map((row) => row.price_1d.length + 2)
@@ -150,6 +162,9 @@ module.exports = {
           `${chalk.white(util.pad("rank", columnWidths.rank))} | ` +
             `${chalk.yellow(util.pad("ticker", columnWidths.ticker))} | ` +
             `${chalk.cyan(util.padStart("price", columnWidths.price))} | ` +
+            `${chalk.cyan(util.padStart("mcap", columnWidths.mcap))} | ` +
+            `${chalk.cyan(util.padStart("float", columnWidths.float))} | ` +
+            
             `${chalk.white(
               util.padStart("price_1d", columnWidths.price_1d)
             )} | ` +
@@ -173,6 +188,9 @@ module.exports = {
             `${chalk.white(util.pad(row.rank, columnWidths.rank))} | ` +
               `${chalk.yellow(util.pad(row.ticker, columnWidths.ticker))} | ` +
               `${chalk.cyan(util.padStart(row.price, columnWidths.price))} | ` +
+              `${chalk.cyan(util.padStart(row.mcap, columnWidths.mcap))} | ` +
+              `${chalk.cyan(util.padStart(row.float, columnWidths.float))} | ` +
+              
               `${util.colorizeAndPadStart(
                 row.price_1d + "%",
                 columnWidths.price_1d
