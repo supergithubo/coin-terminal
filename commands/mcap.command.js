@@ -36,6 +36,14 @@ module.exports = {
         "Specify sorting order: 'asc' for ascending, 'desc' for descending",
         "desc"
       )
+      .option(
+        "--above <interval>",
+        "Filter the results to only show positive mcap change for a specified interval (mcap_1d, mcap_7d, mcap_30d, mcap_60d, mcap_90d)"
+      )
+      .option(
+        "--below <interval>",
+        "Filter the results to only show negative mcap change for a specified interval (mcap_1d, mcap_7d, mcap_30d, mcap_60d, mcap_90d)"
+      )
       .action((options) => {
         const coinsData = JSON.parse(fs.readFileSync("data.json", "utf-8"));
 
@@ -90,8 +98,10 @@ module.exports = {
               market_cap: util.formatWithCommas(
                 (coin.market_cap / 1e6).toFixed(2)
               ),
-              float: (coin.market_cap / coin.fully_diluted_valuation).toFixed(2),
-              
+              float: (coin.market_cap / coin.fully_diluted_valuation).toFixed(
+                2
+              ),
+
               mcap_1d,
               mcap_7d,
               mcap_14d,
@@ -148,6 +158,34 @@ module.exports = {
           rank_60d: row.rank_chg_mcap_60d,
           rank_90d: row.rank_chg_mcap_90d,
         }));
+
+        if (options.above) {
+          const filterInterval = options.above.toLowerCase();
+
+          resultData = resultData.filter((row) => {
+            if (filterInterval === "mcap_1d" && row.mcap_1d > 0) return true;
+            if (filterInterval === "mcap_7d" && row.mcap_7d > 0) return true;
+            if (filterInterval === "mcap_14d" && row.mcap_14d > 0) return true;
+            if (filterInterval === "mcap_30d" && row.mcap_30d > 0) return true;
+            if (filterInterval === "mcap_60d" && row.mcap_60d > 0) return true;
+            if (filterInterval === "mcap_90d" && row.mcap_90d > 0) return true;
+            return false;
+          });
+        }
+
+        if (options.below) {
+          const filterInterval = options.below.toLowerCase();
+
+          resultData = resultData.filter((row) => {
+            if (filterInterval === "mcap_1d" && row.mcap_1d < 0) return true;
+            if (filterInterval === "mcap_7d" && row.mcap_7d < 0) return true;
+            if (filterInterval === "mcap_14d" && row.mcap_14d < 0) return true;
+            if (filterInterval === "mcap_30d" && row.mcap_30d < 0) return true;
+            if (filterInterval === "mcap_60d" && row.mcap_60d < 0) return true;
+            if (filterInterval === "mcap_90d" && row.mcap_90d < 0) return true;
+            return false;
+          });
+        }
 
         if (options.sort && !validSortColumns.includes(options.sort)) {
           console.log(
@@ -226,7 +264,6 @@ module.exports = {
             `${chalk.cyan(util.padStart("price", columnWidths.price))} | ` +
             `${chalk.cyan(util.padStart("mcap", columnWidths.mcap))} | ` +
             `${chalk.cyan(util.padStart("float", columnWidths.float))} | ` +
-
             `${chalk.white(
               util.padStart("mcap_1d", columnWidths.mcap_1d)
             )} | ` +
@@ -276,7 +313,6 @@ module.exports = {
               `${chalk.cyan(util.padStart(row.price, columnWidths.price))} | ` +
               `${chalk.cyan(util.padStart(row.mcap, columnWidths.mcap))} | ` +
               `${chalk.cyan(util.padStart(row.float, columnWidths.float))} | ` +
-
               `${util.colorizeAndPadStart(
                 row.mcap_1d,
                 columnWidths.mcap_1d

@@ -30,6 +30,14 @@ module.exports = {
         "Specify sorting order: 'asc' for ascending, 'desc' for descending",
         "desc"
       )
+      .option(
+        "--above <interval>",
+        "Filter the results to only show positive price change for a specified interval (price_1d, price_7d, price_30d, price_60d, price_90d)"
+      )
+      .option(
+        "--below <interval>",
+        "Filter the results to only show negative price change for a specified interval (price_1d, price_7d, price_30d, price_60d, price_90d)"
+      )
       .action((options) => {
         const coinsData = JSON.parse(fs.readFileSync("data.json", "utf-8"));
 
@@ -78,10 +86,10 @@ module.exports = {
               rank: coin.market_cap_rank,
               ticker: coin.symbol.toUpperCase(),
               price: util.formatWithCommas(coin.current_price.toFixed(2)),
-              mcap: util.formatWithCommas(
-                (coin.market_cap / 1e6).toFixed(2)
+              mcap: util.formatWithCommas((coin.market_cap / 1e6).toFixed(2)),
+              float: (coin.market_cap / coin.fully_diluted_valuation).toFixed(
+                2
               ),
-              float: (coin.market_cap / coin.fully_diluted_valuation).toFixed(2),
 
               price_1d: util.formatWithPlusSign(price1d),
               price_7d: util.formatWithPlusSign(price7d),
@@ -92,6 +100,34 @@ module.exports = {
             });
           }
         });
+
+        if (options.above) {
+          const filterInterval = options.above.toLowerCase();
+
+          resultData = resultData.filter((row) => {
+            if (filterInterval === "price_1d" && row.price_1d > 0) return true;
+            if (filterInterval === "price_7d" && row.price_7d > 0) return true;
+            if (filterInterval === "price_14d" && row.price_14d > 0) return true;
+            if (filterInterval === "price_30d" && row.price_30d > 0) return true;
+            if (filterInterval === "price_60d" && row.price_60d > 0) return true;
+            if (filterInterval === "price_90d" && row.price_90d > 0) return true;
+            return false;
+          });
+        }
+
+        if (options.below) {
+          const filterInterval = options.below.toLowerCase();
+
+          resultData = resultData.filter((row) => {
+            if (filterInterval === "price_1d" && row.price_1d < 0) return true;
+            if (filterInterval === "price_7d" && row.price_7d < 0) return true;
+            if (filterInterval === "price_14d" && row.price_14d < 0) return true;
+            if (filterInterval === "price_30d" && row.price_30d < 0) return true;
+            if (filterInterval === "price_60d" && row.price_60d < 0) return true;
+            if (filterInterval === "price_90d" && row.price_90d < 0) return true;
+            return false;
+          });
+        }
 
         if (options.sort && !validSortColumns.includes(options.sort)) {
           console.log(
@@ -131,7 +167,7 @@ module.exports = {
             "float".length,
             ...resultData.map((row) => row.float.length)
           ),
-          
+
           price_1d: Math.max(
             "price_1d".length,
             ...resultData.map((row) => row.price_1d.length + 2)
@@ -164,7 +200,6 @@ module.exports = {
             `${chalk.cyan(util.padStart("price", columnWidths.price))} | ` +
             `${chalk.cyan(util.padStart("mcap", columnWidths.mcap))} | ` +
             `${chalk.cyan(util.padStart("float", columnWidths.float))} | ` +
-            
             `${chalk.white(
               util.padStart("price_1d", columnWidths.price_1d)
             )} | ` +
@@ -190,7 +225,6 @@ module.exports = {
               `${chalk.cyan(util.padStart(row.price, columnWidths.price))} | ` +
               `${chalk.cyan(util.padStart(row.mcap, columnWidths.mcap))} | ` +
               `${chalk.cyan(util.padStart(row.float, columnWidths.float))} | ` +
-              
               `${util.colorizeAndPadStart(
                 row.price_1d + "%",
                 columnWidths.price_1d
