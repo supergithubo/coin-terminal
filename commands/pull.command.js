@@ -1,3 +1,5 @@
+// commands/pull.command.js
+
 const fs = require("fs");
 const coingecko = require("../services/coingecko.service");
 const util = require("../services/util.service");

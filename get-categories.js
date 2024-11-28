@@ -1,3 +1,5 @@
+// get-categories.js
+
 const fs = require("fs");
 
 const coinsData = JSON.parse(fs.readFileSync("data.json", "utf-8"));

@@ -1,3 +1,5 @@
+// cli.js
+
 const { Command } = require("commander");
 const pull = require("./commands/pull.command");
 const price = require("./commands/price.command");

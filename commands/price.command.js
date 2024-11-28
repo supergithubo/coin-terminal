@@ -1,3 +1,5 @@
+// commands/price.command.js
+
 const fs = require("fs");
 const chalk = require("chalk");
 const util = require("../services/util.service");
