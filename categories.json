@@ -1,0 +1,2947 @@
+[
+  {
+    "id": "bitcoin",
+    "categories": [
+      "Cryptocurrency",
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "Proof of Work (PoW)",
+      "Bitcoin Ecosystem"
+    ]
+  },
+  {
+    "id": "ethereum",
+    "categories": [
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "Ethereum Ecosystem",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "tether",
+    "categories": [
+      "Stablecoins",
+      "USD Stablecoin",
+      "Solana Ecosystem",
+      "Avalanche Ecosystem",
+      "Near Protocol Ecosystem",
+      "Celo Ecosystem",
+      "Ethereum Ecosystem",
+      "Tezos Ecosystem",
+      "Aptos Ecosystem",
+      "TON Ecosystem",
+      "Tron Ecosystem",
+      "Kava Ecosystem",
+      "Fiat-backed Stablecoin"
+    ]
+  },
+  {
+    "id": "solana",
+    "categories": [
+      "Smart Contract Platform",
+      "Solana Ecosystem",
+      "Layer 1 (L1)",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "binancecoin",
+    "categories": [
+      "Smart Contract Platform",
+      "Exchange-based Tokens",
+      "BNB Chain Ecosystem",
+      "Centralized Exchange (CEX) Token",
+      "Layer 1 (L1)",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Moonriver Ecosystem",
+      "Ethereum Ecosystem",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "ripple",
+    "categories": [
+      "Cryptocurrency",
+      "Layer 1 (L1)"
+    ]
+  },
+  {
+    "id": "dogecoin",
+    "categories": [
+      "Cryptocurrency",
+      "Smart Contract Platform",
+      "BNB Chain Ecosystem",
+      "Meme",
+      "Dog-Themed",
+      "Elon Musk-Inspired",
+      "Proof of Work (PoW)"
+    ]
+  },
+  {
+    "id": "usd-coin",
+    "categories": [
+      "Stablecoins",
+      "USD Stablecoin",
+      "Polkadot Ecosystem",
+      "BNB Chain Ecosystem",
+      "Cosmos Ecosystem",
+      "Solana Ecosystem",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Near Protocol Ecosystem",
+      "Gnosis Chain Ecosystem",
+      "Fantom Ecosystem",
+      "Harmony Ecosystem",
+      "Arbitrum Ecosystem",
+      "Celo Ecosystem",
+      "Moonriver Ecosystem",
+      "Moonbeam Ecosystem",
+      "Ethereum Ecosystem",
+      "Cronos Ecosystem",
+      "Algorand Ecosystem",
+      "Metis Ecosystem",
+      "Arbitrum Nova Ecosystem",
+      "Optimism Ecosystem",
+      "Velas Ecosystem",
+      "Canto Ecosystem",
+      "ZkSync Ecosystem",
+      "Sui Ecosystem",
+      "Mantle Ecosystem",
+      "Base Ecosystem",
+      "Rollux Ecosystem",
+      "Ronin Ecosystem",
+      "Tron Ecosystem",
+      "Neon Ecosystem",
+      "Osmosis Ecosystem",
+      "Hedera Ecosystem",
+      "Kava Ecosystem",
+      "Stellar Ecosystem",
+      "Flow Ecosystem",
+      "Fiat-backed Stablecoin"
+    ]
+  },
+  {
+    "id": "cardano",
+    "categories": [
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "Cardano Ecosystem",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "staked-ether",
+    "categories": [
+      "Decentralized Finance (DeFi)",
+      "Eth 2.0 Staking",
+      "Liquid Staking Tokens",
+      "Ethereum Ecosystem",
+      "Liquid Staked ETH",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "avalanche-2",
+    "categories": [
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "Avalanche Ecosystem",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "tron",
+    "categories": [
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "Tron Ecosystem"
+    ]
+  },
+  {
+    "id": "the-open-network",
+    "categories": [
+      "Smart Contract Platform",
+      "BNB Chain Ecosystem",
+      "Layer 1 (L1)",
+      "Ethereum Ecosystem",
+      "TON Ecosystem",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "wrapped-steth",
+    "categories": [
+      "Crypto-Backed Tokens",
+      "Wrapped-Tokens",
+      "Polygon Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Optimism Ecosystem",
+      "ZkSync Ecosystem",
+      "Mantle Ecosystem",
+      "Linea Ecosystem",
+      "Base Ecosystem",
+      "Scroll Ecosystem"
+    ]
+  },
+  {
+    "id": "shiba-inu",
+    "categories": [
+      "BNB Chain Ecosystem",
+      "Meme",
+      "Ethereum Ecosystem",
+      "Shibarium Ecosystem",
+      "Dog-Themed"
+    ]
+  },
+  {
+    "id": "stellar",
+    "categories": [
+      "Cryptocurrency",
+      "Smart Contract Platform",
+      "Stellar Ecosystem",
+      "Layer 1 (L1)"
+    ]
+  },
+  {
+    "id": "wrapped-bitcoin",
+    "categories": [
+      "Crypto-Backed Tokens",
+      "Tokenized BTC",
+      "Wrapped-Tokens",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Near Protocol Ecosystem",
+      "Gnosis Chain Ecosystem",
+      "Fantom Ecosystem",
+      "Harmony Ecosystem",
+      "Arbitrum Ecosystem",
+      "Celo Ecosystem",
+      "Moonriver Ecosystem",
+      "Moonbeam Ecosystem",
+      "Ethereum Ecosystem",
+      "Cronos Ecosystem",
+      "Metis Ecosystem",
+      "Optimism Ecosystem",
+      "Velas Ecosystem",
+      "Kaia Ecosystem",
+      "Step Network Ecosystem",
+      "ZkSync Ecosystem",
+      "Kava Ecosystem",
+      "Aurora Ecosystem",
+      "Energi Ecosystem",
+      "Sora Ecosystem",
+      "Polygon zkEVM Ecosystem",
+      "Milkomeda (Cardano) Ecosystem",
+      "Astar Ecosystem",
+      "Telos Ecosystem",
+      "Fuse Ecosystem",
+      "Viction Ecocystem",
+      "Skale Ecosystem",
+      "Conflux Ecosystem",
+      "Meter Ecosystem",
+      "Syscoin NEVM Ecosystem",
+      "Boba Network Ecosystem",
+      "ThunderCore Ecosystem",
+      "Hydra Ecosystem"
+    ]
+  },
+  {
+    "id": "polkadot",
+    "categories": [
+      "Smart Contract Platform",
+      "Polkadot Ecosystem",
+      "Proof of Stake (PoS)",
+      "Layer 0 (L0)"
+    ]
+  },
+  {
+    "id": "chainlink",
+    "categories": [
+      "Business Services",
+      "Infrastructure",
+      "Decentralized Finance (DeFi)",
+      "Oracle",
+      "BNB Chain Ecosystem",
+      "Cosmos Ecosystem",
+      "Solana Ecosystem",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Near Protocol Ecosystem",
+      "Gnosis Chain Ecosystem",
+      "Fantom Ecosystem",
+      "Harmony Ecosystem",
+      "Arbitrum Ecosystem",
+      "Cardano Ecosystem",
+      "Edgeware Ecosystem",
+      "Ethereum Ecosystem",
+      "Optimism Ecosystem",
+      "Osmosis Ecosystem",
+      "Energi Ecosystem",
+      "Sora Ecosystem",
+      "Huobi ECO Chain Ecosystem",
+      "Milkomeda (Cardano) Ecosystem"
+    ]
+  },
+  {
+    "id": "weth",
+    "categories": [
+      "Crypto-Backed Tokens",
+      "BNB Chain Ecosystem",
+      "Cosmos Ecosystem",
+      "Wrapped-Tokens",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Near Protocol Ecosystem",
+      "Gnosis Chain Ecosystem",
+      "Fantom Ecosystem",
+      "Harmony Ecosystem",
+      "Arbitrum Ecosystem",
+      "Celo Ecosystem",
+      "KardiaChain Ecosystem",
+      "Moonriver Ecosystem",
+      "Moonbeam Ecosystem",
+      "Ethereum Ecosystem",
+      "Cronos Ecosystem",
+      "Metis Ecosystem",
+      "Arbitrum Nova Ecosystem",
+      "Optimism Ecosystem",
+      "Velas Ecosystem",
+      "Kaia Ecosystem",
+      "Canto Ecosystem",
+      "ZkSync Ecosystem",
+      "Base Ecosystem",
+      "Ronin Ecosystem",
+      "Theta Ecosystem",
+      "Tron Ecosystem",
+      "Kava Ecosystem",
+      "Blast Ecosystem",
+      "Mode Ecosystem",
+      "Aurora Ecosystem",
+      "Dogechain Ecosystem",
+      "Energi Ecosystem",
+      "Sora Ecosystem",
+      "Polygon zkEVM Ecosystem",
+      "Milkomeda (Cardano) Ecosystem",
+      "Astar Ecosystem",
+      "Telos Ecosystem",
+      "Viction Ecocystem",
+      "Conflux Ecosystem",
+      "Meter Ecosystem",
+      "Kucoin Community Chain Ecosystem",
+      "Syscoin NEVM Ecosystem",
+      "Boba Network Ecosystem",
+      "Elastos Smart Contract Chain Ecosystem",
+      "ThunderCore Ecosystem",
+      "Astar zkEVM Ecosystem"
+    ]
+  },
+  {
+    "id": "bitcoin-cash",
+    "categories": [
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "Bitcoin Fork",
+      "Proof of Work (PoW)"
+    ]
+  },
+  {
+    "id": "sui",
+    "categories": [
+      "Smart Contract Platform",
+      "Binance Launchpool",
+      "Layer 1 (L1)",
+      "Sui Ecosystem"
+    ]
+  },
+  {
+    "id": "pepe",
+    "categories": [
+      "BNB Chain Ecosystem",
+      "Meme",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Frog-Themed"
+    ]
+  },
+  {
+    "id": "near",
+    "categories": [
+      "Artificial Intelligence (AI)",
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "Near Protocol Ecosystem",
+      "Ethereum Ecosystem",
+      "Data Availability",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "uniswap",
+    "categories": [
+      "Decentralized Exchange (DEX)",
+      "Exchange-based Tokens",
+      "Decentralized Finance (DeFi)",
+      "Governance",
+      "Yield Farming",
+      "Automated Market Maker (AMM)",
+      "BNB Chain Ecosystem",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Near Protocol Ecosystem",
+      "Gnosis Chain Ecosystem",
+      "Harmony Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Optimism Ecosystem",
+      "Energi Ecosystem",
+      "Sora Ecosystem",
+      "Huobi ECO Chain Ecosystem"
+    ]
+  },
+  {
+    "id": "leo-token",
+    "categories": [
+      "Exchange-based Tokens",
+      "Centralized Exchange (CEX) Token",
+      "Ethereum Ecosystem",
+      "Sora Ecosystem"
+    ]
+  },
+  {
+    "id": "litecoin",
+    "categories": [
+      "Cryptocurrency",
+      "Smart Contract Platform",
+      "Proof of Work (PoW)",
+      "Layer 1 (L1)"
+    ]
+  },
+  {
+    "id": "wrapped-eeth",
+    "categories": [
+      "Crypto-Backed Tokens",
+      "Wrapped-Tokens",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Restaking",
+      "Liquid Restaking Tokens",
+      "Ether.fi Ecosystem"
+    ]
+  },
+  {
+    "id": "aptos",
+    "categories": [
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "Aptos Ecosystem",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "internet-computer",
+    "categories": [
+      "Artificial Intelligence (AI)",
+      "Infrastructure",
+      "Smart Contract Platform",
+      "Storage",
+      "Layer 1 (L1)",
+      "Internet Computer Ecosystem",
+      "DePIN",
+      "Layer 0 (L0)",
+      "Cross-chain Communication",
+      "Bitcoin Sidechains",
+      "SideChain"
+    ]
+  },
+  {
+    "id": "hedera-hashgraph",
+    "categories": [
+      "Protocol",
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "Hedera Ecosystem"
+    ]
+  },
+  {
+    "id": "usds",
+    "categories": [
+      "Stablecoins",
+      "USD Stablecoin",
+      "Solana Ecosystem",
+      "Ethereum Ecosystem",
+      "Fiat-backed Stablecoin"
+    ]
+  },
+  {
+    "id": "ethereum-classic",
+    "categories": [
+      "Smart Contract Platform",
+      "Proof of Work (PoW)",
+      "Layer 1 (L1)"
+    ]
+  },
+  {
+    "id": "crypto-com-chain",
+    "categories": [
+      "Smart Contract Platform",
+      "Exchange-based Tokens",
+      "Cosmos Ecosystem",
+      "Centralized Exchange (CEX) Token",
+      "Layer 1 (L1)",
+      "Ethereum Ecosystem",
+      "Cronos Ecosystem"
+    ]
+  },
+  {
+    "id": "polygon-ecosystem-token",
+    "categories": [
+      "Smart Contract Platform",
+      "Polygon Ecosystem",
+      "Ethereum Ecosystem",
+      "Layer 2 (L2)",
+      "SideChain"
+    ]
+  },
+  {
+    "id": "bittensor",
+    "categories": [
+      "Artificial Intelligence (AI)",
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "DePIN"
+    ]
+  },
+  {
+    "id": "ethena-usde",
+    "categories": [
+      "Stablecoins",
+      "Solana Ecosystem",
+      "Ethereum Ecosystem"
+    ]
+  },
+  {
+    "id": "render-token",
+    "categories": [
+      "Artificial Intelligence (AI)",
+      "NFT",
+      "Metaverse",
+      "Solana Ecosystem",
+      "Polygon Ecosystem",
+      "Ethereum Ecosystem",
+      "DePIN"
+    ]
+  },
+  {
+    "id": "arbitrum",
+    "categories": [
+      "Smart Contract Platform",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Arbitrum Nova Ecosystem",
+      "Layer 2 (L2)",
+      "Rollup"
+    ]
+  },
+  {
+    "id": "fetch-ai",
+    "categories": [
+      "Artificial Intelligence (AI)",
+      "Cryptocurrency",
+      "NFT",
+      "BNB Chain Ecosystem",
+      "Cosmos Ecosystem",
+      "Ethereum Ecosystem",
+      "Binance Launchpad",
+      "Osmosis Ecosystem",
+      "AI Agents"
+    ]
+  },
+  {
+    "id": "kaspa",
+    "categories": [
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "Proof of Work (PoW)",
+      "Kaspa Ecosystem"
+    ]
+  },
+  {
+    "id": "filecoin",
+    "categories": [
+      "Infrastructure",
+      "Smart Contract Platform",
+      "Storage",
+      "Layer 1 (L1)",
+      "DePIN"
+    ]
+  },
+  {
+    "id": "dai",
+    "categories": [
+      "Stablecoins",
+      "Decentralized Finance (DeFi)",
+      "USD Stablecoin",
+      "BNB Chain Ecosystem",
+      "Cosmos Ecosystem",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Near Protocol Ecosystem",
+      "Gnosis Chain Ecosystem",
+      "Fantom Ecosystem",
+      "Harmony Ecosystem",
+      "Arbitrum Ecosystem",
+      "Moonriver Ecosystem",
+      "Moonbeam Ecosystem",
+      "Ethereum Ecosystem",
+      "Cronos Ecosystem",
+      "Metis Ecosystem",
+      "Arbitrum Nova Ecosystem",
+      "Optimism Ecosystem",
+      "Velas Ecosystem",
+      "Kaia Ecosystem",
+      "ZkSync Ecosystem",
+      "Base Ecosystem",
+      "Kava Ecosystem",
+      "Aurora Ecosystem",
+      "Energi Ecosystem",
+      "Sora Ecosystem",
+      "Polygon zkEVM Ecosystem",
+      "Milkomeda (Cardano) Ecosystem",
+      "Astar Ecosystem",
+      "Syscoin NEVM Ecosystem",
+      "Hydra Ecosystem",
+      "Crypto-backed Stablecoin",
+      "Fiat-backed Stablecoin"
+    ]
+  },
+  {
+    "id": "vechain",
+    "categories": [
+      "Internet of Things (IOT)",
+      "Business Platform",
+      "Smart Contract Platform",
+      "VeChain Ecosystem",
+      "Layer 1 (L1)"
+    ]
+  },
+  {
+    "id": "celestia",
+    "categories": [
+      "Smart Contract Platform",
+      "Cosmos Ecosystem",
+      "Data Availability",
+      "Modular Blockchain",
+      "Proof of Stake (PoS)",
+      "Secret Ecosystem"
+    ]
+  },
+  {
+    "id": "whitebit",
+    "categories": [
+      "Exchange-based Tokens",
+      "Centralized Exchange (CEX) Token",
+      "Ethereum Ecosystem",
+      "Tron Ecosystem"
+    ]
+  },
+  {
+    "id": "blockstack",
+    "categories": [
+      "Infrastructure",
+      "Smart Contract Platform",
+      "Layer 2 (L2)",
+      "Bitcoin Sidechains",
+      "Stacks Ecosystem",
+      "SideChain"
+    ]
+  },
+  {
+    "id": "bonk",
+    "categories": [
+      "BNB Chain Ecosystem",
+      "Solana Ecosystem",
+      "Polygon Ecosystem",
+      "Meme",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Aptos Ecosystem",
+      "Dog-Themed",
+      "Solana Meme",
+      "Neon Ecosystem"
+    ]
+  },
+  {
+    "id": "okb",
+    "categories": [
+      "Exchange-based Tokens",
+      "Centralized Exchange (CEX) Token",
+      "Ethereum Ecosystem",
+      "Sora Ecosystem",
+      "OKT Chain Ecosystem"
+    ]
+  },
+  {
+    "id": "cosmos",
+    "categories": [
+      "Cryptocurrency",
+      "Smart Contract Platform",
+      "BNB Chain Ecosystem",
+      "Cosmos Ecosystem",
+      "Layer 1 (L1)",
+      "Canto Ecosystem",
+      "Osmosis Ecosystem",
+      "Proof of Stake (PoS)",
+      "Kava Ecosystem",
+      "Archway Ecosystem",
+      "Evmos Ecosystem"
+    ]
+  },
+  {
+    "id": "mantra-dao",
+    "categories": [
+      "Infrastructure",
+      "Smart Contract Platform",
+      "Polkadot Ecosystem",
+      "BNB Chain Ecosystem",
+      "Cosmos Ecosystem",
+      "Layer 1 (L1)",
+      "Polygon Ecosystem",
+      "Ethereum Ecosystem",
+      "Real World Assets (RWA)",
+      "Base Ecosystem",
+      "Osmosis Ecosystem"
+    ]
+  },
+  {
+    "id": "aave",
+    "categories": [
+      "Decentralized Finance (DeFi)",
+      "Governance",
+      "Yield Farming",
+      "BNB Chain Ecosystem",
+      "Lending/Borrowing",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Near Protocol Ecosystem",
+      "Fantom Ecosystem",
+      "Harmony Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Optimism Ecosystem",
+      "Energi Ecosystem",
+      "Sora Ecosystem",
+      "Huobi ECO Chain Ecosystem"
+    ]
+  },
+  {
+    "id": "dogwifcoin",
+    "categories": [
+      "Solana Ecosystem",
+      "Meme",
+      "Dog-Themed",
+      "Solana Meme"
+    ]
+  },
+  {
+    "id": "optimism",
+    "categories": [
+      "Smart Contract Platform",
+      "Optimism Ecosystem",
+      "Layer 2 (L2)",
+      "Optimism Superchain Ecosystem"
+    ]
+  },
+  {
+    "id": "mantle",
+    "categories": [
+      "Smart Contract Platform",
+      "Ethereum Ecosystem",
+      "Layer 2 (L2)",
+      "Mantle Ecosystem"
+    ]
+  },
+  {
+    "id": "fantom",
+    "categories": [
+      "Infrastructure",
+      "Smart Contract Platform",
+      "BNB Chain Ecosystem",
+      "Layer 1 (L1)",
+      "Fantom Ecosystem",
+      "Harmony Ecosystem",
+      "Moonriver Ecosystem",
+      "Ethereum Ecosystem"
+    ]
+  },
+  {
+    "id": "injective-protocol",
+    "categories": [
+      "Smart Contract Platform",
+      "BNB Chain Ecosystem",
+      "Cosmos Ecosystem",
+      "Layer 1 (L1)",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Ethereum Ecosystem",
+      "Binance Launchpad",
+      "Proof of Stake (PoS)",
+      "Secret Ecosystem"
+    ]
+  },
+  {
+    "id": "immutable-x",
+    "categories": [
+      "Smart Contract Platform",
+      "Gaming (GameFi)",
+      "NFT",
+      "Play To Earn",
+      "Ethereum Ecosystem",
+      "Layer 2 (L2)",
+      "Zero Knowledge (ZK)",
+      "Immutable Ecosystem",
+      "Rollup",
+      "Gaming Blockchains"
+    ]
+  },
+  {
+    "id": "monero",
+    "categories": [
+      "Smart Contract Platform",
+      "Privacy Coins",
+      "Layer 1 (L1)",
+      "Proof of Work (PoW)"
+    ]
+  },
+  {
+    "id": "sei-network",
+    "categories": [
+      "Smart Contract Platform",
+      "Cosmos Ecosystem",
+      "Layer 1 (L1)",
+      "Sei Ecosystem",
+      "Parallelized EVM"
+    ]
+  },
+  {
+    "id": "the-graph",
+    "categories": [
+      "Artificial Intelligence (AI)",
+      "Business Services",
+      "Infrastructure",
+      "Smart Contract Platform",
+      "Analytics",
+      "BNB Chain Ecosystem",
+      "Solana Ecosystem",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Near Protocol Ecosystem",
+      "Gnosis Chain Ecosystem",
+      "Harmony Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "DePIN",
+      "Proof of Stake (PoS)",
+      "Energi Ecosystem",
+      "Sora Ecosystem"
+    ]
+  },
+  {
+    "id": "algorand",
+    "categories": [
+      "Cryptocurrency",
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "Algorand Ecosystem",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "bitget-token",
+    "categories": [
+      "Exchange-based Tokens",
+      "Centralized Exchange (CEX) Token",
+      "Ethereum Ecosystem"
+    ]
+  },
+  {
+    "id": "binance-peg-weth",
+    "categories": [
+      "BNB Chain Ecosystem"
+    ]
+  },
+  {
+    "id": "floki",
+    "categories": [
+      "Gaming (GameFi)",
+      "NFT",
+      "BNB Chain Ecosystem",
+      "Metaverse",
+      "Meme",
+      "Ethereum Ecosystem",
+      "Dog-Themed",
+      "TokenFi Launchpad"
+    ]
+  },
+  {
+    "id": "theta-token",
+    "categories": [
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "DePIN",
+      "Theta Ecosystem"
+    ]
+  },
+  {
+    "id": "first-digital-usd",
+    "categories": [
+      "Stablecoins",
+      "BNB Chain Ecosystem",
+      "Ethereum Ecosystem",
+      "Fiat-backed Stablecoin"
+    ]
+  },
+  {
+    "id": "ethena",
+    "categories": [
+      "Stablecoins",
+      "Decentralized Finance (DeFi)",
+      "Binance Launchpool",
+      "Ethereum Ecosystem",
+      "Stablecoin Protocol"
+    ]
+  },
+  {
+    "id": "thorchain",
+    "categories": [
+      "Decentralized Exchange (DEX)",
+      "Infrastructure",
+      "Smart Contract Platform",
+      "Exchange-based Tokens",
+      "Decentralized Finance (DeFi)",
+      "BNB Chain Ecosystem",
+      "Cosmos Ecosystem",
+      "Bridge Governance Tokens",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "rocket-pool-eth",
+    "categories": [
+      "Polygon Ecosystem",
+      "Arbitrum Ecosystem",
+      "Liquid Staking Tokens",
+      "Ethereum Ecosystem",
+      "Optimism Ecosystem",
+      "Base Ecosystem",
+      "Manta Network Ecosystem",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "worldcoin-wld",
+    "categories": [
+      "Smart Contract Platform",
+      "Ethereum Ecosystem",
+      "Decentralized Identifier (DID)",
+      "Optimism Ecosystem",
+      "Optimism Superchain Ecosystem",
+      "World Chain Ecosystem"
+    ]
+  },
+  {
+    "id": "coinbase-wrapped-btc",
+    "categories": [
+      "Crypto-Backed Tokens",
+      "Tokenized BTC",
+      "Wrapped-Tokens",
+      "Solana Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Base Ecosystem"
+    ]
+  },
+  {
+    "id": "mantle-staked-ether",
+    "categories": [
+      "Liquid Staking Tokens",
+      "Ethereum Ecosystem",
+      "Mantle Ecosystem",
+      "Liquid Staked ETH",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "based-brett",
+    "categories": [
+      "Meme",
+      "Base Ecosystem",
+      "Frog-Themed",
+      "Base Meme"
+    ]
+  },
+  {
+    "id": "pyth-network",
+    "categories": [
+      "Business Services",
+      "Infrastructure",
+      "Decentralized Finance (DeFi)",
+      "Oracle",
+      "Solana Ecosystem",
+      "Neon Ecosystem",
+      "Manta Network Ecosystem"
+    ]
+  },
+  {
+    "id": "maker",
+    "categories": [
+      "Stablecoins",
+      "Decentralized Finance (DeFi)",
+      "Governance",
+      "Lending/Borrowing",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Near Protocol Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Real World Assets (RWA)",
+      "Stablecoin Protocol",
+      "Energi Ecosystem",
+      "Sora Ecosystem",
+      "RWA Protocol"
+    ]
+  },
+  {
+    "id": "lido-dao",
+    "categories": [
+      "Infrastructure",
+      "Decentralized Finance (DeFi)",
+      "Polygon Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Optimism Ecosystem",
+      "Liquid Staking Governance Tokens",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "raydium",
+    "categories": [
+      "Decentralized Exchange (DEX)",
+      "Decentralized Finance (DeFi)",
+      "Yield Farming",
+      "Automated Market Maker (AMM)",
+      "Solana Ecosystem",
+      "Launchpad"
+    ]
+  },
+  {
+    "id": "renzo-restaked-eth",
+    "categories": [
+      "BNB Chain Ecosystem",
+      "Arbitrum Ecosystem",
+      "Liquid Staking Tokens",
+      "Ethereum Ecosystem",
+      "Linea Ecosystem",
+      "Base Ecosystem",
+      "Restaking",
+      "Liquid Restaking Tokens",
+      "Blast Ecosystem",
+      "Mode Ecosystem",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "gala",
+    "categories": [
+      "Smart Contract Platform",
+      "Gaming (GameFi)",
+      "NFT",
+      "Layer 1 (L1)",
+      "Play To Earn",
+      "Ethereum Ecosystem",
+      "Gaming Platform",
+      "GalaChain Ecosystem"
+    ]
+  },
+  {
+    "id": "ondo-finance",
+    "categories": [
+      "Ethereum Ecosystem",
+      "Real World Assets (RWA)",
+      "RWA Protocol"
+    ]
+  },
+  {
+    "id": "the-sandbox",
+    "categories": [
+      "Gaming (GameFi)",
+      "NFT",
+      "Metaverse",
+      "Polygon Ecosystem",
+      "Near Protocol Ecosystem",
+      "Play To Earn",
+      "Harmony Ecosystem",
+      "Ethereum Ecosystem",
+      "Binance Launchpad",
+      "Gaming Utility Token",
+      "Simulation Games",
+      "Energi Ecosystem"
+    ]
+  },
+  {
+    "id": "jupiter-exchange-solana",
+    "categories": [
+      "Decentralized Exchange (DEX)",
+      "Decentralized Finance (DeFi)",
+      "Solana Ecosystem",
+      "Dex Aggregator"
+    ]
+  },
+  {
+    "id": "solv-btc",
+    "categories": [
+      "Crypto-Backed Tokens",
+      "BNB Chain Ecosystem",
+      "Avalanche Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Mantle Ecosystem",
+      "Base Ecosystem",
+      "Merlin Chain Ecosystem",
+      "zkLink Nova Ecosystem"
+    ]
+  },
+  {
+    "id": "gatechain-token",
+    "categories": [
+      "Smart Contract Platform",
+      "Exchange-based Tokens",
+      "Centralized Exchange (CEX) Token",
+      "Ethereum Ecosystem",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "kucoin-shares",
+    "categories": [
+      "Exchange-based Tokens",
+      "Centralized Exchange (CEX) Token"
+    ]
+  },
+  {
+    "id": "flow",
+    "categories": [
+      "Smart Contract Platform",
+      "Sports",
+      "NFT",
+      "Layer 1 (L1)",
+      "Proof of Stake (PoS)",
+      "Flow Ecosystem"
+    ]
+  },
+  {
+    "id": "arweave",
+    "categories": [
+      "Smart Contract Platform",
+      "Storage",
+      "Layer 1 (L1)",
+      "DePIN"
+    ]
+  },
+  {
+    "id": "quant-network",
+    "categories": [
+      "Protocol",
+      "Ethereum Ecosystem",
+      "Real World Assets (RWA)",
+      "Energi Ecosystem"
+    ]
+  },
+  {
+    "id": "bitcoin-cash-sv",
+    "categories": [
+      "Smart Contract Platform",
+      "Bitcoin Fork",
+      "Proof of Work (PoW)"
+    ]
+  },
+  {
+    "id": "starknet",
+    "categories": [
+      "Infrastructure",
+      "Smart Contract Platform",
+      "Ethereum Ecosystem",
+      "Layer 2 (L2)",
+      "Zero Knowledge (ZK)",
+      "Starknet Ecosystem",
+      "Rollup"
+    ]
+  },
+  {
+    "id": "matic-network",
+    "categories": [
+      "Smart Contract Platform",
+      "BNB Chain Ecosystem",
+      "Polygon Ecosystem",
+      "Harmony Ecosystem",
+      "Moonriver Ecosystem",
+      "Moonbeam Ecosystem",
+      "Ethereum Ecosystem",
+      "Layer 2 (L2)",
+      "Zero Knowledge (ZK)",
+      "Binance Launchpad",
+      "Rollup",
+      "Proof of Stake (PoS)",
+      "Energi Ecosystem",
+      "Sora Ecosystem"
+    ]
+  },
+  {
+    "id": "tezos",
+    "categories": [
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "Tezos Ecosystem",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "msol",
+    "categories": [
+      "Decentralized Finance (DeFi)",
+      "Solana Ecosystem",
+      "Liquid Staking Tokens",
+      "Liquid Staked SOL",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "bittorrent",
+    "categories": [
+      "Storage",
+      "BNB Chain Ecosystem",
+      "Ethereum Ecosystem",
+      "DePIN",
+      "Binance Launchpad",
+      "Tron Ecosystem",
+      "Energi Ecosystem",
+      "BitTorrent Ecosystem"
+    ]
+  },
+  {
+    "id": "popcat",
+    "categories": [
+      "Solana Ecosystem",
+      "Meme",
+      "Solana Meme",
+      "Cat-Themed"
+    ]
+  },
+  {
+    "id": "beam-2",
+    "categories": [
+      "Smart Contract Platform",
+      "Gaming (GameFi)",
+      "BNB Chain Ecosystem",
+      "Binance Launchpool",
+      "Avalanche Ecosystem",
+      "Ethereum Ecosystem",
+      "Gaming Blockchains",
+      "Avalanche L1"
+    ]
+  },
+  {
+    "id": "eos",
+    "categories": [
+      "Smart Contract Platform"
+    ]
+  },
+  {
+    "id": "jasmycoin",
+    "categories": [
+      "Internet of Things (IOT)",
+      "Ethereum Ecosystem",
+      "DePIN"
+    ]
+  },
+  {
+    "id": "flare-networks",
+    "categories": [
+      "Smart Contract Platform",
+      "Layer 1 (L1)"
+    ]
+  },
+  {
+    "id": "axie-infinity",
+    "categories": [
+      "Gaming (GameFi)",
+      "NFT",
+      "BNB Chain Ecosystem",
+      "Axie Infinity Ecosystem",
+      "Metaverse",
+      "Play To Earn",
+      "Harmony Ecosystem",
+      "Ethereum Ecosystem",
+      "Binance Launchpad",
+      "Ronin Ecosystem",
+      "Card Games",
+      "Breeding",
+      "Gaming Governance Token",
+      "Gaming Utility Token",
+      "Energi Ecosystem"
+    ]
+  },
+  {
+    "id": "dydx-chain",
+    "categories": [
+      "Decentralized Exchange (DEX)",
+      "Smart Contract Platform",
+      "Decentralized Finance (DeFi)",
+      "Cosmos Ecosystem",
+      "Appchains"
+    ]
+  },
+  {
+    "id": "helium",
+    "categories": [
+      "Communication",
+      "Internet of Things (IOT)",
+      "Smart Contract Platform",
+      "Solana Ecosystem",
+      "DePIN",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "decentraland",
+    "categories": [
+      "Entertainment",
+      "Gaming (GameFi)",
+      "NFT",
+      "BNB Chain Ecosystem",
+      "Metaverse",
+      "Polygon Ecosystem",
+      "Play To Earn",
+      "Ethereum Ecosystem",
+      "Simulation Games"
+    ]
+  },
+  {
+    "id": "ether-fi-staked-eth",
+    "categories": [
+      "Liquid Staking Tokens",
+      "Ethereum Ecosystem",
+      "Restaking",
+      "Liquid Restaking Tokens",
+      "Ether.fi Ecosystem",
+      "Liquid Staked ETH",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "kaia",
+    "categories": [
+      "Smart Contract Platform",
+      "Layer 1 (L1)"
+    ]
+  },
+  {
+    "id": "ethereum-name-service",
+    "categories": [
+      "Governance",
+      "NFT",
+      "Ethereum Ecosystem",
+      "Name Service"
+    ]
+  },
+  {
+    "id": "peanut-the-squirrel",
+    "categories": [
+      "Solana Ecosystem",
+      "Meme",
+      "Solana Meme",
+      "Pump.fun Ecosystem",
+      "Zoo-Themed",
+      "Memorial Themed"
+    ]
+  },
+  {
+    "id": "elrond-erd-2",
+    "categories": [
+      "Protocol",
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "MultiversX Ecosystem",
+      "Binance Launchpad",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "tokenize-xchange",
+    "categories": [
+      "Exchange-based Tokens",
+      "Centralized Exchange (CEX) Token",
+      "Ethereum Ecosystem"
+    ]
+  },
+  {
+    "id": "fasttoken",
+    "categories": [
+      "Ethereum Ecosystem",
+      "Bahamut Ecosystem"
+    ]
+  },
+  {
+    "id": "neo",
+    "categories": [
+      "Smart Contract Platform",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "lombard-staked-btc",
+    "categories": [
+      "BNB Chain Ecosystem",
+      "Ethereum Ecosystem",
+      "Restaking",
+      "Liquid Restaking Tokens"
+    ]
+  },
+  {
+    "id": "kelp-dao-restaked-eth",
+    "categories": [
+      "Liquid Staking Tokens",
+      "Ethereum Ecosystem",
+      "Restaking",
+      "Liquid Restaking Tokens",
+      "Liquid Staked ETH",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "akash-network",
+    "categories": [
+      "Artificial Intelligence (AI)",
+      "Smart Contract Platform",
+      "Cosmos Ecosystem",
+      "DePIN",
+      "Osmosis Ecosystem",
+      "Proof of Stake (PoS)",
+      "Archway Ecosystem"
+    ]
+  },
+  {
+    "id": "mog-coin",
+    "categories": [
+      "Meme",
+      "Ethereum Ecosystem",
+      "Base Ecosystem",
+      "Cat-Themed"
+    ]
+  },
+  {
+    "id": "aerodrome-finance",
+    "categories": [
+      "Decentralized Exchange (DEX)",
+      "Decentralized Finance (DeFi)",
+      "Automated Market Maker (AMM)",
+      "Base Ecosystem"
+    ]
+  },
+  {
+    "id": "binance-staked-sol",
+    "categories": [
+      "Decentralized Finance (DeFi)",
+      "Solana Ecosystem",
+      "Liquid Staking Tokens",
+      "Liquid Staked SOL",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "coredaoorg",
+    "categories": [
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "Bitcoin Sidechains",
+      "SideChain"
+    ]
+  },
+  {
+    "id": "jupiter-staked-sol",
+    "categories": [
+      "Solana Ecosystem",
+      "Liquid Staking Tokens",
+      "Liquid Staked SOL",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "solv-protocol-solvbtc-bbn",
+    "categories": [
+      "Crypto-Backed Tokens",
+      "BNB Chain Ecosystem",
+      "Avalanche Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Mantle Ecosystem",
+      "Base Ecosystem",
+      "Restaking",
+      "Merlin Chain Ecosystem"
+    ]
+  },
+  {
+    "id": "arbitrum-bridged-wbtc-arbitrum-one",
+    "categories": [
+      "Arbitrum Ecosystem",
+      "Bridged WBTC",
+      "Bridged-Tokens"
+    ]
+  },
+  {
+    "id": "apecoin",
+    "categories": [
+      "Gaming (GameFi)",
+      "NFT",
+      "Polygon Ecosystem",
+      "Ethereum Ecosystem",
+      "Gaming Governance Token",
+      "Gaming Utility Token",
+      "ApeChain Ecosystem"
+    ]
+  },
+  {
+    "id": "ecash",
+    "categories": [
+      "Cryptocurrency",
+      "Smart Contract Platform",
+      "Governance",
+      "Layer 1 (L1)",
+      "Bitcoin Fork",
+      "Proof of Work (PoW)"
+    ]
+  },
+  {
+    "id": "mina-protocol",
+    "categories": [
+      "Smart Contract Platform",
+      "Zero Knowledge (ZK)",
+      "Proof of Stake (PoS)",
+      "Privacy Blockchain"
+    ]
+  },
+  {
+    "id": "nexo",
+    "categories": [
+      "Finance / Banking",
+      "Polygon Ecosystem",
+      "Fantom Ecosystem",
+      "Ethereum Ecosystem",
+      "Energi Ecosystem",
+      "Sora Ecosystem"
+    ]
+  },
+  {
+    "id": "pendle",
+    "categories": [
+      "Decentralized Exchange (DEX)",
+      "Decentralized Finance (DeFi)",
+      "Yield Farming",
+      "Automated Market Maker (AMM)",
+      "BNB Chain Ecosystem",
+      "Derivatives",
+      "Lending/Borrowing",
+      "Avalanche Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Optimism Ecosystem",
+      "Fixed Interest",
+      "Real World Assets (RWA)",
+      "LSDFi",
+      "Restaking",
+      "LRTfi",
+      "Liquid Restaking Governance Tokens",
+      "Yield Tokenization Protocol",
+      "Liquid Staking",
+      "BTCfi"
+    ]
+  },
+  {
+    "id": "pancakeswap-token",
+    "categories": [
+      "Decentralized Exchange (DEX)",
+      "Exchange-based Tokens",
+      "Decentralized Finance (DeFi)",
+      "Governance",
+      "Yield Farming",
+      "Automated Market Maker (AMM)",
+      "BNB Chain Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Aptos Ecosystem",
+      "ZkSync Ecosystem",
+      "Linea Ecosystem",
+      "Base Ecosystem",
+      "Polygon zkEVM Ecosystem",
+      "opBNB Ecosystem"
+    ]
+  },
+  {
+    "id": "virtual-protocol",
+    "categories": [
+      "Artificial Intelligence (AI)",
+      "Ethereum Ecosystem",
+      "Base Ecosystem",
+      "AI Agents",
+      "Virtuals Protocol Ecosystem"
+    ]
+  },
+  {
+    "id": "goatseus-maximus",
+    "categories": [
+      "Solana Ecosystem",
+      "Meme",
+      "Solana Meme",
+      "AI Meme",
+      "Pump.fun Ecosystem",
+      "Terminal of Truths"
+    ]
+  },
+  {
+    "id": "notcoin",
+    "categories": [
+      "Gaming (GameFi)",
+      "Binance Launchpool",
+      "Meme",
+      "Play To Earn",
+      "TON Ecosystem",
+      "TON Meme",
+      "Tap to Earn"
+    ]
+  },
+  {
+    "id": "mantle-restaked-eth",
+    "categories": [
+      "Ethereum Ecosystem",
+      "Mantle Ecosystem",
+      "Restaking",
+      "Liquid Restaking Tokens",
+      "Liquid Restaked ETH"
+    ]
+  },
+  {
+    "id": "aioz-network",
+    "categories": [
+      "Artificial Intelligence (AI)",
+      "Smart Contract Platform",
+      "Storage",
+      "BNB Chain Ecosystem",
+      "Cosmos Ecosystem",
+      "Layer 1 (L1)",
+      "Ethereum Ecosystem",
+      "DePIN"
+    ]
+  },
+  {
+    "id": "conflux-token",
+    "categories": [
+      "Smart Contract Platform",
+      "Proof of Work (PoW)"
+    ]
+  },
+  {
+    "id": "chiliz",
+    "categories": [
+      "Smart Contract Platform",
+      "Sports",
+      "NFT",
+      "Layer 1 (L1)",
+      "Ethereum Ecosystem",
+      "Chiliz Ecosystem",
+      "Energi Ecosystem"
+    ]
+  },
+  {
+    "id": "cat-in-a-dogs-world",
+    "categories": [
+      "Solana Ecosystem",
+      "Meme",
+      "Dog-Themed",
+      "Solana Meme",
+      "Cat-Themed"
+    ]
+  },
+  {
+    "id": "xdce-crowd-sale",
+    "categories": [
+      "Finance / Banking",
+      "Smart Contract Platform",
+      "Ethereum Ecosystem",
+      "XDC Ecosystem",
+      "Real World Assets (RWA)"
+    ]
+  },
+  {
+    "id": "ordinals",
+    "categories": [
+      "Solana Ecosystem",
+      "BRC-20",
+      "Bitcoin Ecosystem",
+      "Inscriptions"
+    ]
+  },
+  {
+    "id": "zcash",
+    "categories": [
+      "Smart Contract Platform",
+      "Privacy Coins",
+      "Zero Knowledge (ZK)",
+      "Proof of Work (PoW)"
+    ]
+  },
+  {
+    "id": "binance-peg-dogecoin",
+    "categories": [
+      "BNB Chain Ecosystem",
+      "Meme",
+      "Harmony Ecosystem"
+    ]
+  },
+  {
+    "id": "wormhole",
+    "categories": [
+      "Solana Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Interoperability",
+      "Base Ecosystem",
+      "Cross-chain Communication"
+    ]
+  },
+  {
+    "id": "iota",
+    "categories": [
+      "Internet of Things (IOT)",
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "DePIN",
+      "IOTA EVM Ecosystem"
+    ]
+  },
+  {
+    "id": "havven",
+    "categories": [
+      "Decentralized Exchange (DEX)",
+      "Exchange-based Tokens",
+      "Decentralized Finance (DeFi)",
+      "Governance",
+      "Yield Farming",
+      "Derivatives",
+      "Synthetic Issuer",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Near Protocol Ecosystem",
+      "Fantom Ecosystem",
+      "Harmony Ecosystem",
+      "Ethereum Ecosystem",
+      "Optimism Ecosystem",
+      "Base Ecosystem",
+      "Energi Ecosystem",
+      "Huobi ECO Chain Ecosystem",
+      "Synthetic"
+    ]
+  },
+  {
+    "id": "grass",
+    "categories": [
+      "Artificial Intelligence (AI)",
+      "Solana Ecosystem",
+      "DePIN"
+    ]
+  },
+  {
+    "id": "axelar",
+    "categories": [
+      "Infrastructure",
+      "BNB Chain Ecosystem",
+      "Cosmos Ecosystem",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Fantom Ecosystem",
+      "Arbitrum Ecosystem",
+      "Moonbeam Ecosystem",
+      "Ethereum Ecosystem",
+      "Optimism Ecosystem",
+      "Interoperability",
+      "Bridge Governance Tokens",
+      "Base Ecosystem",
+      "Osmosis Ecosystem",
+      "Cross-chain Communication",
+      "Secret Ecosystem"
+    ]
+  },
+  {
+    "id": "usdd",
+    "categories": [
+      "Stablecoins",
+      "USD Stablecoin",
+      "BNB Chain Ecosystem",
+      "Avalanche Ecosystem",
+      "Near Protocol Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Tron Ecosystem",
+      "BitTorrent Ecosystem",
+      "Algorithmic Stablecoin",
+      "Fiat-backed Stablecoin"
+    ]
+  },
+  {
+    "id": "l2-standard-bridged-weth-base",
+    "categories": [
+      "Base Ecosystem",
+      "Bridged WETH",
+      "Bridged-Tokens"
+    ]
+  },
+  {
+    "id": "dydx",
+    "categories": [
+      "Decentralized Exchange (DEX)",
+      "Exchange-based Tokens",
+      "Decentralized Finance (DeFi)",
+      "Derivatives",
+      "Perpetuals",
+      "Ethereum Ecosystem"
+    ]
+  },
+  {
+    "id": "eigenlayer",
+    "categories": [
+      "Infrastructure",
+      "Ethereum Ecosystem",
+      "Data Availability",
+      "Restaking"
+    ]
+  },
+  {
+    "id": "neiro-3",
+    "categories": [
+      "Meme",
+      "Ethereum Ecosystem",
+      "Dog-Themed"
+    ]
+  },
+  {
+    "id": "arbitrum-bridged-weth-arbitrum-one",
+    "categories": [
+      "Arbitrum Ecosystem",
+      "Bridged WETH",
+      "Bridged-Tokens"
+    ]
+  },
+  {
+    "id": "dog-go-to-the-moon-rune",
+    "categories": [
+      "Meme",
+      "Dog-Themed",
+      "Bitcoin Ecosystem",
+      "Runes"
+    ]
+  },
+  {
+    "id": "gnosis",
+    "categories": [
+      "Decentralized Exchange (DEX)",
+      "Protocol",
+      "Smart Contract Platform",
+      "Decentralized Finance (DeFi)",
+      "Prediction Markets",
+      "Layer 1 (L1)",
+      "Gnosis Chain Ecosystem",
+      "MEV Protection",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "SideChain",
+      "Energi Ecosystem"
+    ]
+  },
+  {
+    "id": "arkham",
+    "categories": [
+      "Artificial Intelligence (AI)",
+      "Analytics",
+      "Derivatives",
+      "Perpetuals",
+      "Ethereum Ecosystem",
+      "Binance Launchpad"
+    ]
+  },
+  {
+    "id": "nervos-network",
+    "categories": [
+      "Smart Contract Platform",
+      "Interoperability",
+      "Layer 2 (L2)",
+      "Rollup",
+      "Proof of Work (PoW)"
+    ]
+  },
+  {
+    "id": "ronin",
+    "categories": [
+      "Smart Contract Platform",
+      "Gaming (GameFi)",
+      "NFT",
+      "Layer 1 (L1)",
+      "Play To Earn",
+      "Zero Knowledge (ZK)",
+      "Ronin Ecosystem",
+      "Gaming Blockchains",
+      "SideChain"
+    ]
+  },
+  {
+    "id": "terra-luna",
+    "categories": [
+      "Smart Contract Platform",
+      "Decentralized Finance (DeFi)",
+      "Cosmos Ecosystem",
+      "Fantom Ecosystem",
+      "Terra Classic Ecosystem"
+    ]
+  },
+  {
+    "id": "blur",
+    "categories": [
+      "NFT",
+      "Ethereum Ecosystem",
+      "NFT Marketplace",
+      "NFTFi"
+    ]
+  },
+  {
+    "id": "coinbase-wrapped-staked-eth",
+    "categories": [
+      "Crypto-Backed Tokens",
+      "Eth 2.0 Staking",
+      "Wrapped-Tokens",
+      "Polygon Ecosystem",
+      "Arbitrum Ecosystem",
+      "Liquid Staking Tokens",
+      "Ethereum Ecosystem",
+      "Optimism Ecosystem",
+      "Base Ecosystem",
+      "Liquid Staked ETH",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "zksync",
+    "categories": [
+      "Smart Contract Platform",
+      "Layer 2 (L2)",
+      "Zero Knowledge (ZK)",
+      "ZkSync Ecosystem"
+    ]
+  },
+  {
+    "id": "tether-gold",
+    "categories": [
+      "Stablecoins",
+      "Tokenized Assets",
+      "Tokenized Gold",
+      "Ethereum Ecosystem",
+      "Real World Assets (RWA)",
+      "Tokenized Commodities"
+    ]
+  },
+  {
+    "id": "oasis-network",
+    "categories": [
+      "Smart Contract Platform",
+      "BNB Chain Ecosystem",
+      "Layer 1 (L1)",
+      "Proof of Stake (PoS)",
+      "Privacy Blockchain"
+    ]
+  },
+  {
+    "id": "frax",
+    "categories": [
+      "Stablecoins",
+      "Decentralized Finance (DeFi)",
+      "USD Stablecoin",
+      "BNB Chain Ecosystem",
+      "Seigniorage",
+      "Solana Ecosystem",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Near Protocol Ecosystem",
+      "Fantom Ecosystem",
+      "Harmony Ecosystem",
+      "Arbitrum Ecosystem",
+      "Moonriver Ecosystem",
+      "Moonbeam Ecosystem",
+      "Ethereum Ecosystem",
+      "Optimism Ecosystem",
+      "Stablecoin Protocol",
+      "Polygon zkEVM Ecosystem",
+      "Evmos Ecosystem",
+      "Fiat-backed Stablecoin"
+    ]
+  },
+  {
+    "id": "compound-governance-token",
+    "categories": [
+      "Decentralized Finance (DeFi)",
+      "Governance",
+      "Yield Farming",
+      "BNB Chain Ecosystem",
+      "Lending/Borrowing",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Near Protocol Ecosystem",
+      "Harmony Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Base Ecosystem",
+      "Energi Ecosystem",
+      "Sora Ecosystem"
+    ]
+  },
+  {
+    "id": "curve-dao-token",
+    "categories": [
+      "Decentralized Exchange (DEX)",
+      "Stablecoins",
+      "Exchange-based Tokens",
+      "Decentralized Finance (DeFi)",
+      "Governance",
+      "Yield Farming",
+      "Automated Market Maker (AMM)",
+      "Polygon Ecosystem",
+      "Gnosis Chain Ecosystem",
+      "Fantom Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Optimism Ecosystem",
+      "Curve Ecosystem",
+      "Stablecoin Protocol",
+      "Energi Ecosystem",
+      "Sora Ecosystem"
+    ]
+  },
+  {
+    "id": "book-of-meme",
+    "categories": [
+      "Solana Ecosystem",
+      "Meme",
+      "Solana Meme",
+      "Presale Meme "
+    ]
+  },
+  {
+    "id": "stepn",
+    "categories": [
+      "Gaming (GameFi)",
+      "NFT",
+      "BNB Chain Ecosystem",
+      "Solana Ecosystem",
+      "Polygon Ecosystem",
+      "Play To Earn",
+      "Move To Earn",
+      "Ethereum Ecosystem",
+      "Binance Launchpad",
+      "Gaming Governance Token",
+      "Sports Games"
+    ]
+  },
+  {
+    "id": "super-oeth",
+    "categories": [
+      "Decentralized Finance (DeFi)",
+      "Liquid Staking Tokens",
+      "Base Ecosystem",
+      "Liquid Staked ETH",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "superfarm",
+    "categories": [
+      "Gaming (GameFi)",
+      "NFT",
+      "BNB Chain Ecosystem",
+      "Collectibles",
+      "Polygon Ecosystem",
+      "Ethereum Ecosystem",
+      "NFT Marketplace",
+      "Energi Ecosystem"
+    ]
+  },
+  {
+    "id": "kava",
+    "categories": [
+      "Finance / Banking",
+      "Smart Contract Platform",
+      "BNB Chain Ecosystem",
+      "Cosmos Ecosystem",
+      "Layer 1 (L1)",
+      "Binance Launchpad"
+    ]
+  },
+  {
+    "id": "astar",
+    "categories": [
+      "Smart Contract Platform",
+      "Polkadot Ecosystem",
+      "Layer 1 (L1)",
+      "Ethereum Ecosystem",
+      "Layer 2 (L2)",
+      "Astar Ecosystem"
+    ]
+  },
+  {
+    "id": "echelon-prime",
+    "categories": [
+      "Smart Contract Platform",
+      "Gaming (GameFi)",
+      "Ethereum Ecosystem",
+      "Base Ecosystem",
+      "Card Games",
+      "Gaming Blockchains",
+      "Gaming Utility Token"
+    ]
+  },
+  {
+    "id": "safe",
+    "categories": [
+      "Infrastructure",
+      "Wallets",
+      "Gnosis Chain Ecosystem",
+      "Ethereum Ecosystem"
+    ]
+  },
+  {
+    "id": "kusama",
+    "categories": [
+      "Smart Contract Platform",
+      "Polkadot Ecosystem",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "paypal-usd",
+    "categories": [
+      "Stablecoins",
+      "USD Stablecoin",
+      "Solana Ecosystem",
+      "Ethereum Ecosystem",
+      "Fiat-backed Stablecoin"
+    ]
+  },
+  {
+    "id": "bitcoin-gold",
+    "categories": [
+      "Cryptocurrency",
+      "Smart Contract Platform",
+      "Bitcoin Fork",
+      "Proof of Work (PoW)"
+    ]
+  },
+  {
+    "id": "spx6900",
+    "categories": [
+      "Solana Ecosystem",
+      "Meme",
+      "Ethereum Ecosystem",
+      "Base Ecosystem"
+    ]
+  },
+  {
+    "id": "chill-guy",
+    "categories": [
+      "Solana Ecosystem",
+      "Meme",
+      "Dog-Themed",
+      "Solana Meme",
+      "Pump.fun Ecosystem"
+    ]
+  },
+  {
+    "id": "1inch",
+    "categories": [
+      "Decentralized Exchange (DEX)",
+      "Exchange-based Tokens",
+      "Decentralized Finance (DeFi)",
+      "Automated Market Maker (AMM)",
+      "BNB Chain Ecosystem",
+      "Avalanche Ecosystem",
+      "Number",
+      "Polygon Ecosystem",
+      "Near Protocol Ecosystem",
+      "Harmony Ecosystem",
+      "Ethereum Ecosystem",
+      "Energi Ecosystem",
+      "Dex Aggregator"
+    ]
+  },
+  {
+    "id": "beldex",
+    "categories": [
+      "Cryptocurrency",
+      "Smart Contract Platform",
+      "Privacy Coins",
+      "Masternodes",
+      "DePIN",
+      "Proof of Stake (PoS)",
+      "Proof of Work (PoW)"
+    ]
+  },
+  {
+    "id": "theta-fuel",
+    "categories": [
+      "Smart Contract Platform",
+      "DePIN",
+      "Theta Ecosystem",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "layerzero",
+    "categories": [
+      "Smart Contract Platform",
+      "BNB Chain Ecosystem",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Optimism Ecosystem",
+      "Base Ecosystem",
+      "Layer 0 (L0)",
+      "Cross-chain Communication"
+    ]
+  },
+  {
+    "id": "frax-ether",
+    "categories": [
+      "Decentralized Finance (DeFi)",
+      "BNB Chain Ecosystem",
+      "Polygon Ecosystem",
+      "Fantom Ecosystem",
+      "Arbitrum Ecosystem",
+      "Moonbeam Ecosystem",
+      "Liquid Staking Tokens",
+      "Ethereum Ecosystem",
+      "Optimism Ecosystem",
+      "Polygon zkEVM Ecosystem",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "ether-fi-staked-btc",
+    "categories": [
+      "Decentralized Finance (DeFi)",
+      "Ethereum Ecosystem",
+      "Restaking",
+      "Liquid Restaking Tokens",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "polygon-pos-bridged-weth-polygon-pos",
+    "categories": [
+      "Polygon Ecosystem",
+      "Bridged WETH",
+      "Bridged-Tokens"
+    ]
+  },
+  {
+    "id": "sats-ordinals",
+    "categories": [
+      "BRC-20",
+      "Bitcoin Ecosystem",
+      "Inscriptions"
+    ]
+  },
+  {
+    "id": "wemix-token",
+    "categories": [
+      "Smart Contract Platform",
+      "Gaming (GameFi)",
+      "Layer 1 (L1)",
+      "Play To Earn",
+      "Gaming Blockchains",
+      "WEMIX Ecosystem"
+    ]
+  },
+  {
+    "id": "pax-gold",
+    "categories": [
+      "Stablecoins",
+      "Tokenized Assets",
+      "Tokenized Gold",
+      "Harmony Ecosystem",
+      "Ethereum Ecosystem",
+      "Real World Assets (RWA)",
+      "Tokenized Commodities"
+    ]
+  },
+  {
+    "id": "bitcoin-avalanche-bridged-btc-b",
+    "categories": [
+      "Tokenized BTC",
+      "Avalanche Ecosystem",
+      "Bridged-Tokens"
+    ]
+  },
+  {
+    "id": "ether-fi",
+    "categories": [
+      "Decentralized Finance (DeFi)",
+      "Binance Launchpool",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Restaking",
+      "Liquid Restaking Governance Tokens",
+      "Ether.fi Ecosystem"
+    ]
+  },
+  {
+    "id": "holotoken",
+    "categories": [
+      "Smart Contract Platform",
+      "Storage",
+      "Harmony Ecosystem",
+      "Ethereum Ecosystem",
+      "DePIN",
+      "Energi Ecosystem",
+      "Sora Ecosystem"
+    ]
+  },
+  {
+    "id": "enjincoin",
+    "categories": [
+      "Entertainment",
+      "Smart Contract Platform",
+      "Gaming (GameFi)",
+      "NFT",
+      "Metaverse",
+      "Layer 1 (L1)",
+      "Harmony Ecosystem",
+      "Ethereum Ecosystem",
+      "Gaming Blockchains",
+      "Energi Ecosystem"
+    ]
+  },
+  {
+    "id": "tbtc",
+    "categories": [
+      "Crypto-Backed Tokens",
+      "Decentralized Finance (DeFi)",
+      "Tokenized BTC",
+      "Solana Ecosystem",
+      "Polygon Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Optimism Ecosystem",
+      "Base Ecosystem"
+    ]
+  },
+  {
+    "id": "apenft",
+    "categories": [
+      "BNB Chain Ecosystem",
+      "Ethereum Ecosystem",
+      "Tron Ecosystem"
+    ]
+  },
+  {
+    "id": "livepeer",
+    "categories": [
+      "Artificial Intelligence (AI)",
+      "Harmony Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "DePIN"
+    ]
+  },
+  {
+    "id": "woo-network",
+    "categories": [
+      "Decentralized Exchange (DEX)",
+      "Exchange-based Tokens",
+      "Decentralized Finance (DeFi)",
+      "Automated Market Maker (AMM)",
+      "BNB Chain Ecosystem",
+      "Derivatives",
+      "Perpetuals",
+      "Centralized Exchange (CEX) Token",
+      "Solana Ecosystem",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Near Protocol Ecosystem",
+      "Fantom Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "ZkSync Ecosystem",
+      "Huobi ECO Chain Ecosystem",
+      "OKT Chain Ecosystem"
+    ]
+  },
+  {
+    "id": "turbo",
+    "categories": [
+      "Meme",
+      "Ethereum Ecosystem",
+      "Frog-Themed",
+      "AI Meme"
+    ]
+  },
+  {
+    "id": "true-usd",
+    "categories": [
+      "Stablecoins",
+      "USD Stablecoin",
+      "BNB Chain Ecosystem",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Near Protocol Ecosystem",
+      "Fantom Ecosystem",
+      "Harmony Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Tron Ecosystem",
+      "Fiat-backed Stablecoin"
+    ]
+  },
+  {
+    "id": "zilliqa",
+    "categories": [
+      "Smart Contract Platform",
+      "BNB Chain Ecosystem",
+      "Zilliqa Ecosystem",
+      "Ethereum Ecosystem"
+    ]
+  },
+  {
+    "id": "jito-governance-token",
+    "categories": [
+      "Decentralized Finance (DeFi)",
+      "Solana Ecosystem",
+      "Liquid Staking Governance Tokens",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "dymension",
+    "categories": [
+      "Smart Contract Platform",
+      "Cosmos Ecosystem",
+      "Modular Blockchain",
+      "Rollups-as-a-Service (RaaS)"
+    ]
+  },
+  {
+    "id": "dexe",
+    "categories": [
+      "Business Platform",
+      "BNB Chain Ecosystem",
+      "Ethereum Ecosystem"
+    ]
+  },
+  {
+    "id": "0x",
+    "categories": [
+      "Decentralized Exchange (DEX)",
+      "Protocol",
+      "Decentralized Finance (DeFi)",
+      "Governance",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Harmony Ecosystem",
+      "Ethereum Ecosystem",
+      "Energi Ecosystem"
+    ]
+  },
+  {
+    "id": "amp-token",
+    "categories": [
+      "Decentralized Finance (DeFi)",
+      "Governance",
+      "Near Protocol Ecosystem",
+      "Ethereum Ecosystem",
+      "Energi Ecosystem"
+    ]
+  },
+  {
+    "id": "golem",
+    "categories": [
+      "Artificial Intelligence (AI)",
+      "Business Platform",
+      "Polygon Ecosystem",
+      "Ethereum Ecosystem",
+      "DePIN",
+      "Energi Ecosystem"
+    ]
+  },
+  {
+    "id": "reserve-rights-token",
+    "categories": [
+      "Decentralized Finance (DeFi)",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Real World Assets (RWA)",
+      "Base Ecosystem",
+      "Energi Ecosystem"
+    ]
+  },
+  {
+    "id": "celo",
+    "categories": [
+      "Smart Contract Platform",
+      "Celo Ecosystem",
+      "Proof of Stake (PoS)",
+      "Optimism Superchain Ecosystem"
+    ]
+  },
+  {
+    "id": "sweth",
+    "categories": [
+      "Arbitrum Ecosystem",
+      "Liquid Staking Tokens",
+      "Ethereum Ecosystem",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "stader-ethx",
+    "categories": [
+      "Liquid Staking Tokens",
+      "Ethereum Ecosystem",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "trust-wallet-token",
+    "categories": [
+      "BNB Chain Ecosystem",
+      "Wallets",
+      "Account Abstraction",
+      "Energi Ecosystem"
+    ]
+  },
+  {
+    "id": "dash",
+    "categories": [
+      "Cryptocurrency",
+      "Smart Contract Platform",
+      "Privacy Coins",
+      "Masternodes",
+      "Governance",
+      "Proof of Stake (PoS)",
+      "Proof of Work (PoW)"
+    ]
+  },
+  {
+    "id": "l2-standard-bridged-weth-blast",
+    "categories": [
+      "Blast Ecosystem",
+      "Bridged WETH",
+      "Bridged-Tokens"
+    ]
+  },
+  {
+    "id": "memecoin-2",
+    "categories": [
+      "NFT",
+      "Binance Launchpool",
+      "Meme",
+      "Ethereum Ecosystem"
+    ]
+  },
+  {
+    "id": "usual-usd",
+    "categories": [
+      "Stablecoins",
+      "USD Stablecoin",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Fiat-backed Stablecoin"
+    ]
+  },
+  {
+    "id": "pepecoin-2",
+    "categories": [
+      "Solana Ecosystem",
+      "Meme",
+      "Ethereum Ecosystem",
+      "Frog-Themed"
+    ]
+  },
+  {
+    "id": "ethereum-pow-iou",
+    "categories": [
+      "Smart Contract Platform",
+      "EthereumPoW Ecosystem",
+      "Proof of Work (PoW)"
+    ]
+  },
+  {
+    "id": "iotex",
+    "categories": [
+      "Internet of Things (IOT)",
+      "Business Platform",
+      "BNB Chain Ecosystem",
+      "Polygon Ecosystem",
+      "IoTeX Ecosystem",
+      "Ethereum Ecosystem",
+      "DePIN",
+      "Base Ecosystem",
+      "Account Abstraction"
+    ]
+  },
+  {
+    "id": "basic-attention-token",
+    "categories": [
+      "Solana Ecosystem",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Near Protocol Ecosystem",
+      "Harmony Ecosystem",
+      "Ethereum Ecosystem",
+      "Energi Ecosystem"
+    ]
+  },
+  {
+    "id": "ondo-us-dollar-yield",
+    "categories": [
+      "Stablecoins",
+      "Solana Ecosystem",
+      "Arbitrum Ecosystem",
+      "Ethereum Ecosystem",
+      "Aptos Ecosystem",
+      "Sui Ecosystem",
+      "Mantle Ecosystem",
+      "Fiat-backed Stablecoin"
+    ]
+  },
+  {
+    "id": "fwog",
+    "categories": [
+      "Solana Ecosystem",
+      "Meme",
+      "Frog-Themed",
+      "Solana Meme",
+      "Pump.fun Ecosystem"
+    ]
+  },
+  {
+    "id": "telcoin",
+    "categories": [
+      "Decentralized Finance (DeFi)",
+      "Wallets",
+      "Polygon Ecosystem",
+      "Ethereum Ecosystem",
+      "Payment Solutions",
+      "Sora Ecosystem"
+    ]
+  },
+  {
+    "id": "benqi-liquid-staked-avax",
+    "categories": [
+      "Avalanche Ecosystem",
+      "Liquid Staking Tokens",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "verus-coin",
+    "categories": [
+      "MEV Protection"
+    ]
+  },
+  {
+    "id": "ankr",
+    "categories": [
+      "Technology & Science",
+      "Polkadot Ecosystem",
+      "BNB Chain Ecosystem",
+      "Cosmos Ecosystem",
+      "Avalanche Ecosystem",
+      "Polygon Ecosystem",
+      "Gnosis Chain Ecosystem",
+      "Fantom Ecosystem",
+      "Arbitrum Ecosystem",
+      "Celo Ecosystem",
+      "Moonriver Ecosystem",
+      "Ethereum Ecosystem",
+      "Optimism Ecosystem",
+      "Liquid Staking Governance Tokens",
+      "Linea Ecosystem",
+      "DePIN",
+      "Scroll Ecosystem",
+      "Rollups-as-a-Service (RaaS)",
+      "Blast Ecosystem",
+      "Mode Ecosystem",
+      "Polygon zkEVM Ecosystem",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "corgiai",
+    "categories": [
+      "Solana Ecosystem",
+      "Meme",
+      "Ethereum Ecosystem",
+      "Cronos Ecosystem",
+      "Dog-Themed",
+      "AI Meme"
+    ]
+  },
+  {
+    "id": "manta-network",
+    "categories": [
+      "Smart Contract Platform",
+      "Polkadot Ecosystem",
+      "Binance Launchpool",
+      "Layer 2 (L2)",
+      "Manta Network Ecosystem"
+    ]
+  },
+  {
+    "id": "aevo-exchange",
+    "categories": [
+      "Smart Contract Platform",
+      "Decentralized Finance (DeFi)",
+      "Binance Launchpool",
+      "Derivatives",
+      "Perpetuals",
+      "Ethereum Ecosystem",
+      "Layer 2 (L2)"
+    ]
+  },
+  {
+    "id": "aelf",
+    "categories": [
+      "Infrastructure",
+      "Smart Contract Platform",
+      "BNB Chain Ecosystem",
+      "Layer 1 (L1)",
+      "Ethereum Ecosystem",
+      "Aelf Ecosystem"
+    ]
+  },
+  {
+    "id": "act-i-the-ai-prophecy",
+    "categories": [
+      "Solana Ecosystem",
+      "Meme",
+      "Solana Meme",
+      "AI Meme",
+      "Pump.fun Ecosystem"
+    ]
+  },
+  {
+    "id": "siacoin",
+    "categories": [
+      "Smart Contract Platform",
+      "Storage",
+      "Near Protocol Ecosystem",
+      "DePIN",
+      "Proof of Work (PoW)"
+    ]
+  },
+  {
+    "id": "polymesh",
+    "categories": [
+      "Polkadot Ecosystem",
+      "Real World Assets (RWA)"
+    ]
+  },
+  {
+    "id": "staked-frax-ether",
+    "categories": [
+      "Decentralized Finance (DeFi)",
+      "BNB Chain Ecosystem",
+      "Eth 2.0 Staking",
+      "Polygon Ecosystem",
+      "Fantom Ecosystem",
+      "Arbitrum Ecosystem",
+      "Moonbeam Ecosystem",
+      "Liquid Staking Tokens",
+      "Ethereum Ecosystem",
+      "Optimism Ecosystem",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "osmosis",
+    "categories": [
+      "Decentralized Exchange (DEX)",
+      "Decentralized Finance (DeFi)",
+      "Automated Market Maker (AMM)",
+      "Cosmos Ecosystem",
+      "Osmosis Ecosystem",
+      "Evmos Ecosystem",
+      "Secret Ecosystem"
+    ]
+  },
+  {
+    "id": "zetachain",
+    "categories": [
+      "Smart Contract Platform",
+      "BNB Chain Ecosystem",
+      "Layer 1 (L1)",
+      "Ethereum Ecosystem",
+      "ZetaChain Ecosystem",
+      "Cross-chain Communication"
+    ]
+  },
+  {
+    "id": "usdb",
+    "categories": [
+      "Stablecoins",
+      "USD Stablecoin",
+      "Blast Ecosystem",
+      "Crypto-backed Stablecoin",
+      "Fiat-backed Stablecoin"
+    ]
+  },
+  {
+    "id": "origintrail",
+    "categories": [
+      "Artificial Intelligence (AI)",
+      "Polkadot Ecosystem",
+      "Metaverse",
+      "Polygon Ecosystem",
+      "Gnosis Chain Ecosystem",
+      "Ethereum Ecosystem",
+      "Interoperability",
+      "Real World Assets (RWA)",
+      "DePIN",
+      "Decentralized Science (DeSci)"
+    ]
+  },
+  {
+    "id": "illuvium",
+    "categories": [
+      "Gaming (GameFi)",
+      "NFT",
+      "Metaverse",
+      "Play To Earn",
+      "Ethereum Ecosystem",
+      "RPG",
+      "Gaming Governance Token",
+      "Adventure Games",
+      "Energi Ecosystem"
+    ]
+  },
+  {
+    "id": "bazaars",
+    "categories": [
+      "Ethereum Ecosystem"
+    ]
+  },
+  {
+    "id": "gigachad-2",
+    "categories": [
+      "Solana Ecosystem",
+      "Meme",
+      "Solana Meme"
+    ]
+  },
+  {
+    "id": "hashnote-usyc",
+    "categories": [
+      "Ethereum Ecosystem",
+      "Real World Assets (RWA)"
+    ]
+  },
+  {
+    "id": "liquid-staked-ethereum",
+    "categories": [
+      "Liquid Staking Tokens",
+      "Ethereum Ecosystem",
+      "Liquid Staked ETH",
+      "Liquid Staking"
+    ]
+  },
+  {
+    "id": "bridged-usdc-polygon-pos-bridge",
+    "categories": [
+      "Stablecoins",
+      "USD Stablecoin",
+      "Polygon Ecosystem",
+      "Bridged USDC",
+      "Fiat-backed Stablecoin",
+      "Bridged-Tokens"
+    ]
+  },
+  {
+    "id": "we-love-t",
+    "categories": [
+      "Solana Ecosystem",
+      "Meme",
+      "Solana Meme"
+    ]
+  },
+  {
+    "id": "qtum",
+    "categories": [
+      "Smart Contract Platform",
+      "Proof of Stake (PoS)"
+    ]
+  },
+  {
+    "id": "baby-doge-coin",
+    "categories": [
+      "BNB Chain Ecosystem",
+      "Solana Ecosystem",
+      "Meme",
+      "Ethereum Ecosystem",
+      "Dog-Themed",
+      "Solana Meme"
+    ]
+  },
+  {
+    "id": "gas",
+    "categories": [
+      "NEO Ecosystem"
+    ]
+  },
+  {
+    "id": "qubic-network",
+    "categories": [
+      "Artificial Intelligence (AI)",
+      "Smart Contract Platform",
+      "Layer 1 (L1)",
+      "Proof of Work (PoW)"
+    ]
+  },
+  {
+    "id": "just",
+    "categories": [
+      "Decentralized Finance (DeFi)",
+      "Tron Ecosystem"
+    ]
+  },
+  {
+    "id": "daddy-chill",
+    "categories": [
+      "Solana Ecosystem",
+      "Meme",
+      "Pump.fun Ecosystem"
+    ]
+  },
+  {
+    "id": "quantixai",
+    "categories": [
+      "Ethereum Ecosystem"
+    ]
+  }
+]
