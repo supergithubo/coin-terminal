@@ -6,6 +6,7 @@ const util = require("../services/util.service");
 const core = require("../services/core.service");
 
 const config = JSON.parse(fs.readFileSync("config.json", "utf-8"));
+const skipTickers = config.skip || [];
 const validSortColumns = [
   "mcap_1d",
   "mcap_7d",
@@ -40,8 +41,10 @@ module.exports = {
         "Filter the results to only show negative mcap change for a specified interval (mcap_1d, mcap_7d, mcap_30d, mcap_60d, mcap_90d)"
       )
       .action((options) => {
-        const coinsData = JSON.parse(fs.readFileSync("data.json", "utf-8"));
-        const categoriesData = JSON.parse(fs.readFileSync("categories.json", "utf-8"));
+        let coinsData = JSON.parse(fs.readFileSync("data.json", "utf-8"));
+        let categoriesData = JSON.parse(fs.readFileSync("categories.json", "utf-8"));
+
+        coinsData = coinsData.filter((coin)=>!skipTickers.includes(coin.symbol.toUpperCase()));
 
         let resultData = [];
 
