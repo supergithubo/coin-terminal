@@ -108,3 +108,16 @@ Processes data from pulled data and calculates market cap changes and rank chang
 - `--below <interval>` Filter the results to only show negative mcap change for a specified interval (`mcap_1d`, `mcap_7d`, `mcap_30d`, `mcap_60d`, `mcap_90d`)
 - `--category <category>`  Filter the results by category (e.g., 'Smart Contract Platform')
 - `-h, --help` display help for command
+
+## `category`
+
+`node cli.js category`
+
+Processes category group from pulled data and calculates market cap changes
+
+### options
+
+- `--sort <column>` Sort by specified column (e.g., `mcap_1d`, `mcap_7d`, `mcap_30d`, `mcap_60d`, `mcap_90d`)
+- `--order <asc|desc>` Specify sorting order: `asc` for ascending, `desc` for descending (default: `desc`)
+- `--above <interval>` Filter the results to only show positive mcap change for a specified interval (`mcap_1d`, `mcap_7d`, `mcap_30d`, `mcap_60d`, `mcap_90d`)
+- `--below <interval>` Filter the results to only show negative mcap change for a specified interval (`mcap_1d`, `mcap_7d`, `mcap_30d`, `mcap_60d`, `mcap_90d`)
