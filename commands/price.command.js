@@ -40,10 +40,20 @@ module.exports = {
         "--below <interval>",
         "Filter the results to only show negative price change for a specified interval (price_1d, price_7d, price_30d, price_60d, price_90d)"
       )
+      .option(
+        "--category <category>",
+        "Filter the results by category (e.g., 'Smart Contract Platform')"
+      )
       .action((options) => {
-        const coinsData = JSON.parse(fs.readFileSync("data.json", "utf-8"));
+        let coinsData = JSON.parse(fs.readFileSync("data.json", "utf-8"));
+        let categoriesData = JSON.parse(fs.readFileSync("categories.json", "utf-8"));
 
         let resultData = [];
+        coinsData = coinsData.map(coin => {
+          const category = categoriesData.find(cat => cat.id === coin.id);
+          return { ...coin, categories: category ? category.categories : [] };
+        });
+
         coinsData.forEach((coin) => {
           if (skipTickers.includes(coin.symbol.toUpperCase())) {
             return;
@@ -87,6 +97,7 @@ module.exports = {
             resultData.push({
               rank: coin.market_cap_rank,
               ticker: coin.symbol.toUpperCase(),
+              categories: coin.categories,
               price: util.formatWithCommas(coin.current_price.toFixed(2)),
               mcap: util.formatWithCommas((coin.market_cap / 1e6).toFixed(2)),
               float: (coin.market_cap / coin.fully_diluted_valuation).toFixed(
@@ -128,6 +139,16 @@ module.exports = {
             if (filterInterval === "price_60d" && row.price_60d < 0) return true;
             if (filterInterval === "price_90d" && row.price_90d < 0) return true;
             return false;
+          });
+        }
+
+        if (options.category) {
+          const categoryFilter = options.category.toLowerCase();
+
+          resultData = resultData.filter((row) => {
+            return row.categories.some((category) =>
+              category.toLowerCase().includes(categoryFilter)
+            );
           });
         }
 

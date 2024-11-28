@@ -46,10 +46,20 @@ module.exports = {
         "--below <interval>",
         "Filter the results to only show negative mcap change for a specified interval (mcap_1d, mcap_7d, mcap_30d, mcap_60d, mcap_90d)"
       )
+      .option(
+        "--category <category>",
+        "Filter the results by category (e.g., 'Smart Contract Platform')"
+      )
       .action((options) => {
-        const coinsData = JSON.parse(fs.readFileSync("data.json", "utf-8"));
+        let coinsData = JSON.parse(fs.readFileSync("data.json", "utf-8"));
+        let categoriesData = JSON.parse(fs.readFileSync("categories.json", "utf-8"));
 
         let resultData = [];
+        coinsData = coinsData.map(coin => {
+          const category = categoriesData.find(cat => cat.id === coin.id);
+          return { ...coin, categories: category ? category.categories : [] };
+        });
+
         coinsData.forEach((coin) => {
           if (skipTickers.includes(coin.symbol.toUpperCase())) {
             return;
@@ -99,6 +109,7 @@ module.exports = {
 
             resultData.push({
               rank: coin.market_cap_rank,
+              categories: coin.categories,
               ticker: coin.symbol.toUpperCase(),
               price: util.formatWithCommas(coin.current_price.toFixed(2)),
               market_cap: util.formatWithCommas(
@@ -147,6 +158,7 @@ module.exports = {
         resultData = resultData.map((row) => ({
           rank: row.rank,
           ticker: row.ticker,
+          categories: row.categories,
           price: row.price,
           mcap: row.market_cap,
           float: row.float,
@@ -190,6 +202,16 @@ module.exports = {
             if (filterInterval === "mcap_60d" && row.mcap_60d < 0) return true;
             if (filterInterval === "mcap_90d" && row.mcap_90d < 0) return true;
             return false;
+          });
+        }
+
+        if (options.category) {
+          const categoryFilter = options.category.toLowerCase();
+
+          resultData = resultData.filter((row) => {
+            return row.categories.some((category) =>
+              category.toLowerCase().includes(categoryFilter)
+            );
           });
         }
 
