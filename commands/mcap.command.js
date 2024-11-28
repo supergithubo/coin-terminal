@@ -51,6 +51,10 @@ module.exports = {
 
         let resultData = [];
         coinsData.forEach((coin) => {
+          if (skipTickers.includes(coin.symbol.toUpperCase())) {
+            return;
+          }
+
           const { market_data } = coin;
           if (market_data) {
             const { market_caps } = market_data;
@@ -305,10 +309,6 @@ module.exports = {
         );
 
         resultData.forEach((row) => {
-          if (skipTickers.includes(row.ticker.toUpperCase())) {
-            return;
-          }
-
           console.log(
             `${chalk.white(util.pad(row.rank, columnWidths.rank))} | ` +
               `${chalk.yellow(util.pad(row.ticker, columnWidths.ticker))} | ` +
