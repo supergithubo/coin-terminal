@@ -8,9 +8,10 @@ module.exports = {
   register(program) {
     program
       .command("pull")
-      .description("Fetches the top 250 coins data")
-      .action(async () => {
-        const coins = await coingecko.getTop250Coins();
+      .description("Fetches the top coins data")
+      .option("--data", "Include coins data")
+      .action(async (options) => {
+        const coins = await coingecko.getCoins();
 
         let requestCount = 0;
         let batchCount = 0;
@@ -36,13 +37,20 @@ module.exports = {
             coin.market_data = marketData;
           }
 
+          if (options.data) {
+            const coinsData = await coingecko.getCoinData(id);
+            if (coinsData) {
+              coin.coin_data = coinsData;
+            }
+          }
+
           requestCount++;
-          await util.sleep(500);
+          await util.sleep(250);
         }
 
         fs.writeFileSync("data.json", JSON.stringify(coins, null, 2), "utf-8");
         console.log(
-          'Top 250 coins data with data has been fetched and saved to "data.json".'
+          'Top coins data with data has been fetched and saved to "data.json".'
         );
       });
   },

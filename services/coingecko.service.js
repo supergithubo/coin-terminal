@@ -9,7 +9,7 @@ const headers = {
   "x-cg-demo-api-key": apiKey,
 };
 
-async function getTop250Coins() {
+async function getCoins() {
   const url =
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=250&page=";
   let coins = [];
@@ -48,7 +48,7 @@ async function getMarketData(coinId) {
 }
 
 module.exports = {
-  getTop250Coins,
+  getCoins,
   getCoinData,
   getMarketData,
 };
