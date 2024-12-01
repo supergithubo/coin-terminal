@@ -1,4 +1,4 @@
-// commands/mcap.command.js
+// commands/rank.command.js
 
 const fs = require("fs");
 const chalk = require("chalk");
@@ -14,24 +14,24 @@ const validSortColumns = [
   "mcap_30d",
   "mcap_60d",
   "mcap_90d",
-  "ws_1d",
-  "ws_7d",
-  "ws_14d",
-  "ws_30d",
-  "ws_60d",
-  "ws_90d",
+  "rank_1d",
+  "rank_7d",
+  "rank_14d",
+  "rank_30d",
+  "rank_60d",
+  "rank_90d",
 ];
 
 module.exports = {
   register(program) {
     program
-      .command("mcap")
+      .command("rank")
       .description(
-        "Processes data from pulled data and calculates market cap changes and weighted share (ws) flow"
+        "Processes data from pulled data and calculates rank changes by market cap"
       )
       .option(
         "--sort <column>",
-        "Sort by specified column (e.g., mcap_1d, mcap_7d, mcap_30d, mcap_60d, mcap_90d, ws_1d, ws_7d, ws_30d, ws_60d, ws_90d)"
+        "Sort by specified column (e.g., mcap_1d, mcap_7d, mcap_30d, mcap_60d, mcap_90d, rank_1d, rank_7d, rank_30d, rank_60d, rank_90d)"
       )
       .option(
         "--order <asc|desc>",
@@ -61,15 +61,6 @@ module.exports = {
           const category = categoriesData.find((cat) => cat.id === coin.id);
           return { ...coin, categories: category ? category.categories : [] };
         });
-
-        let totalMcap = 0;
-
-        let totalMcapChanged_1d = 0;
-        let totalMcapChanged_7d = 0;
-        let totalMcapChanged_14d = 0;
-        let totalMcapChanged_30d = 0;
-        let totalMcapChanged_60d = 0;
-        let totalMcapChanged_90d = 0;
 
         coinsData.forEach((coin) => {
           const { market_data } = coin;
@@ -114,15 +105,6 @@ module.exports = {
               90
             );
 
-            totalMcap += coin.market_cap;
-
-            totalMcapChanged_1d += mCapChange1d;
-            totalMcapChanged_7d += mCapChange7d;
-            totalMcapChanged_14d += mCapChange14d;
-            totalMcapChanged_30d += mCapChange30d;
-            totalMcapChanged_60d += mCapChange60d;
-            totalMcapChanged_90d += mCapChange90d;
-
             resultData.push({
               rank: coin.market_cap_rank,
               categories: coin.categories,
@@ -141,12 +123,6 @@ module.exports = {
               mcap_30d,
               mcap_60d,
               mcap_90d,
-              mCapChange1d,
-              mCapChange7d,
-              mCapChange14d,
-              mCapChange30d,
-              mCapChange60d,
-              mCapChange90d,
               mcap_chg_1d: util.formatWithPlusSign(mCapChange1d),
               mcap_chg_7d: util.formatWithPlusSign(mCapChange7d),
               mcap_chg_14d: util.formatWithPlusSign(mCapChange14d),
@@ -157,54 +133,47 @@ module.exports = {
           }
         });
 
-        resultData = resultData.map((row) => {
-          return {
-            rank: row.rank,
-            ticker: row.ticker,
-            categories: row.categories,
-            price: row.price,
-            mcap: row.market_cap,
-            float: row.float,
+        core.calculateRanks(resultData, "mcap_1d");
+        core.calculateRanks(resultData, "mcap_7d");
+        core.calculateRanks(resultData, "mcap_14d");
+        core.calculateRanks(resultData, "mcap_30d");
+        core.calculateRanks(resultData, "mcap_60d");
+        core.calculateRanks(resultData, "mcap_90d");
 
-            mcap_1d: row.mcap_chg_1d,
-            mcap_7d: row.mcap_chg_7d,
-            mcap_14d: row.mcap_chg_14d,
-            mcap_30d: row.mcap_chg_30d,
-            mcap_60d: row.mcap_chg_60d,
-            mcap_90d: row.mcap_chg_90d,
+        core.calculateRankChanges(
+          resultData,
+          [
+            "mcap_1d",
+            "mcap_7d",
+            "mcap_14d",
+            "mcap_30d",
+            "mcap_60d",
+            "mcap_90d",
+          ],
+          "rank"
+        );
 
-            ws_1d: (
-              (row.mCapChange1d / totalMcapChanged_1d -
-                parseFloat(row.market_cap) / totalMcap) *
-              1000
-            ).toFixed(2),
-            ws_7d: (
-              (row.mCapChange7d / totalMcapChanged_7d -
-                parseFloat(row.market_cap) / totalMcap) *
-              1000
-            ).toFixed(2),
-            ws_14d: (
-              (row.mCapChange14d / totalMcapChanged_14d -
-                parseFloat(row.market_cap) / totalMcap) *
-              1000
-            ).toFixed(2),
-            ws_30d: (
-              (row.mCapChange30d / totalMcapChanged_30d -
-                parseFloat(row.market_cap) / totalMcap) *
-              1000
-            ).toFixed(2),
-            ws_60d: (
-              (row.mCapChange60d / totalMcapChanged_60d -
-                parseFloat(row.market_cap) / totalMcap) *
-              1000
-            ).toFixed(2),
-            ws_90d: (
-              (row.mCapChange90d / totalMcapChanged_90d -
-                parseFloat(row.market_cap) / totalMcap) *
-              1000
-            ).toFixed(2),
-          };
-        });
+        resultData = resultData.map((row) => ({
+          rank: row.rank,
+          ticker: row.ticker,
+          categories: row.categories,
+          price: row.price,
+          mcap: row.market_cap,
+          float: row.float,
+
+          mcap_1d: row.mcap_chg_1d,
+          mcap_7d: row.mcap_chg_7d,
+          mcap_14d: row.mcap_chg_14d,
+          mcap_30d: row.mcap_chg_30d,
+          mcap_60d: row.mcap_chg_60d,
+          mcap_90d: row.mcap_chg_90d,
+          rank_1d: row.rank_chg_mcap_1d,
+          rank_7d: row.rank_chg_mcap_7d,
+          rank_14d: row.rank_chg_mcap_14d,
+          rank_30d: row.rank_chg_mcap_30d,
+          rank_60d: row.rank_chg_mcap_60d,
+          rank_90d: row.rank_chg_mcap_90d,
+        }));
 
         if (options.above) {
           const filterInterval = options.above.toLowerCase();
@@ -287,50 +256,32 @@ module.exports = {
             "mcap_1d".length,
             ...resultData.map((row) => row.mcap_1d.length + 1)
           ),
+          rank_1d: Math.max("Rank 1d".length),
           mcap_7d: Math.max(
             "mcap_7d".length,
             ...resultData.map((row) => row.mcap_7d.length + 1)
           ),
+          rank_7d: Math.max("Rank 7d".length),
           mcap_14d: Math.max(
             "mcap_14d".length,
             ...resultData.map((row) => row.mcap_14d.length + 1)
           ),
+          rank_14d: Math.max("Rank 14d".length),
           mcap_30d: Math.max(
             "mcap_30d".length,
             ...resultData.map((row) => row.mcap_30d.length + 1)
           ),
+          rank_30d: Math.max("Rank 30d".length),
           mcap_60d: Math.max(
             "mcap_60d".length,
             ...resultData.map((row) => row.mcap_60d.length + 1)
           ),
+          rank_60d: Math.max("Rank 60d".length),
           mcap_90d: Math.max(
             "mcap_90d".length,
             ...resultData.map((row) => row.mcap_90d.length + 1)
           ),
-          ws_1d: Math.max(
-            "ws_1d".length,
-            ...resultData.map((row) => row.ws_1d.length + 2)
-          ),
-          ws_7d: Math.max(
-            "ws_7d".length,
-            ...resultData.map((row) => row.ws_7d.length + 2)
-          ),
-          ws_14d: Math.max(
-            "ws_14d".length,
-            ...resultData.map((row) => row.ws_14d.length + 2)
-          ),
-          ws_30d: Math.max(
-            "ws_30d".length,
-            ...resultData.map((row) => row.ws_30d.length + 2)
-          ),
-          ws_60d: Math.max(
-            "ws_60d".length,
-            ...resultData.map((row) => row.ws_60d.length + 2)
-          ),
-          ws_90d: Math.max(
-            "ws_90d".length,
-            ...resultData.map((row) => row.ws_90d.length + 2)
-          ),
+          rank_90d: Math.max("Rank 90d".length),
         };
 
         console.log(
@@ -343,35 +294,37 @@ module.exports = {
               util.padStart("mcap_1d", columnWidths.mcap_1d)
             )} | ` +
             `${chalk.white(
+              util.padStart("rank_1d", columnWidths.rank_1d)
+            )} | ` +
+            `${chalk.white(
               util.padStart("mcap_7d", columnWidths.mcap_7d)
+            )} | ` +
+            `${chalk.white(
+              util.padStart("rank_7d", columnWidths.rank_7d)
             )} | ` +
             `${chalk.white(
               util.padStart("mcap_14d", columnWidths.mcap_14d)
             )} | ` +
             `${chalk.white(
+              util.padStart("rank_14d", columnWidths.rank_14d)
+            )} | ` +
+            `${chalk.white(
               util.padStart("mcap_30d", columnWidths.mcap_30d)
+            )} | ` +
+            `${chalk.white(
+              util.padStart("rank_30d", columnWidths.rank_30d)
             )} | ` +
             `${chalk.white(
               util.padStart("mcap_60d", columnWidths.mcap_60d)
             )} | ` +
             `${chalk.white(
+              util.padStart("rank_60d", columnWidths.rank_60d)
+            )} | ` +
+            `${chalk.white(
               util.padStart("mcap_90d", columnWidths.mcap_90d)
             )} | ` +
-            `${chalk.white(util.padStart("ws_1d", columnWidths.ws_1d))} | ` +
             `${chalk.white(
-              util.padStart("ws_7d", columnWidths.ws_7d - 1)
-            )} | ` +
-            `${chalk.white(
-              util.padStart("ws_14d", columnWidths.ws_14d - 1)
-            )} | ` +
-            `${chalk.white(
-              util.padStart("ws_30d", columnWidths.ws_30d - 1)
-            )} | ` +
-            `${chalk.white(
-              util.padStart("ws_60d", columnWidths.ws_60d - 1)
-            )} | ` +
-            `${chalk.white(
-              util.padStart("ws_90d", columnWidths.ws_90d - 1)
+              util.padStart("rank_90d", columnWidths.rank_90d)
             )} | `
         );
 
@@ -391,49 +344,55 @@ module.exports = {
                 columnWidths.mcap_1d
               )} | ` +
               `${util.colorizeAndPadStart(
+                row.rank_1d,
+                columnWidths.rank_1d,
+                true
+              )} | ` +
+              `${util.colorizeAndPadStart(
                 row.mcap_7d,
                 columnWidths.mcap_7d
+              )} | ` +
+              `${util.colorizeAndPadStart(
+                row.rank_7d,
+                columnWidths.rank_7d,
+                true
               )} | ` +
               `${util.colorizeAndPadStart(
                 row.mcap_14d,
                 columnWidths.mcap_14d
               )} | ` +
               `${util.colorizeAndPadStart(
+                row.rank_14d,
+                columnWidths.rank_14d,
+                true
+              )} | ` +
+              `${util.colorizeAndPadStart(
                 row.mcap_30d,
                 columnWidths.mcap_30d
+              )} | ` +
+              `${util.colorizeAndPadStart(
+                row.rank_30d,
+                columnWidths.rank_30d,
+                true
               )} | ` +
               `${util.colorizeAndPadStart(
                 row.mcap_60d,
                 columnWidths.mcap_60d
               )} | ` +
               `${util.colorizeAndPadStart(
+                row.rank_60d,
+                columnWidths.rank_60d,
+                true
+              )} | ` +
+              `${util.colorizeAndPadStart(
                 row.mcap_90d,
                 columnWidths.mcap_90d
               )} | ` +
-              `${util.colorizeAndPadStart2(
-                row.ws_1d + "%",
-                columnWidths.ws_1d
-              )} |` +
-              `${util.colorizeAndPadStart2(
-                row.ws_7d + "%",
-                columnWidths.ws_7d
-              )} |` +
-              `${util.colorizeAndPadStart2(
-                row.ws_14d + "%",
-                columnWidths.ws_14d
-              )} |` +
-              `${util.colorizeAndPadStart2(
-                row.ws_30d + "%",
-                columnWidths.ws_30d
-              )} |` +
-              `${util.colorizeAndPadStart2(
-                row.ws_60d + "%",
-                columnWidths.ws_60d
-              )} |` +
-              `${util.colorizeAndPadStart2(
-                row.ws_90d + "%",
-                columnWidths.ws_90d
-              )} |`
+              `${util.colorizeAndPadStart(
+                row.rank_90d,
+                columnWidths.rank_90d,
+                true
+              )} | `
           );
         });
       });

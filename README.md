@@ -98,7 +98,22 @@ Processes data from pulled data and calculates price changes and weighted averag
 
 `node cli.js mcap`
 
-Processes data from pulled data and calculates market cap changes and rank changes
+Processes data from pulled data and calculates market cap changes and weighted share (ws) flow
+
+### options
+
+- `--sort <column>` Sort by specified column (e.g., `mcap_1d`, `mcap_7d`, `mcap_30d`, `mcap_60d`, `mcap_90d`, `ws_14`, `ws_30`, `ws_60`, `ws_90`)
+- `--order <asc|desc>` Specify sorting order: `asc` for ascending, `desc` for descending (default: `desc`)
+- `--above <interval>` Filter the results to only show positive mcap change for a specified interval (`mcap_1d`, `mcap_7d`, `mcap_30d`, `mcap_60d`, `mcap_90d`)
+- `--below <interval>` Filter the results to only show negative mcap change for a specified interval (`mcap_1d`, `mcap_7d`, `mcap_30d`, `mcap_60d`, `mcap_90d`)
+- `--category <category>` Filter the results by category (e.g., 'Smart Contract Platform')
+- `-h, --help` display help for command
+
+## `rank`
+
+`node cli.js rank`
+
+Processes data from pulled data and calculates rank changes by market cap
 
 ### options:
 
