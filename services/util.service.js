@@ -61,6 +61,35 @@ function colorizeAndPadStart(value, padding, noformat) {
   }
 }
 
+function colorizeAndPadStart2(value, padding, noformat) {
+  const numValue = parseFloat(value);
+  const isPercentage = value.toString().endsWith("%");
+  if (isNaN(numValue) && !isPercentage) {
+    return chalk.white(padStart("N/A", padding));
+  }
+
+  let formattedValue = formatWithCommas(numValue);
+  if (noformat) {
+    formattedValue = numValue;
+  }
+
+  if (isPercentage) {
+    formattedValue = `${formattedValue}%`;
+  }
+
+  if (numValue > 1000) {
+    return chalk.blue(padStart(formattedValue, padding));
+  } else if (numValue > 100) {
+    return chalk.green(padStart(formattedValue, padding));
+  } else if (numValue > 0) {
+    return chalk.yellow(padStart(formattedValue, padding));
+  } else if (numValue < 0) {
+    return chalk.red(padStart(formattedValue, padding));
+  } else {
+    return chalk.white(padStart(formattedValue, padding));
+  }
+}
+
 function sort(resultData, sortColumn, isAscending) {
   resultData.sort((a, b) => {
     const valA = parseFloat(
@@ -81,5 +110,6 @@ module.exports = {
   formatWithCommas,
   formatWithPlusSign,
   colorizeAndPadStart,
+  colorizeAndPadStart2,
   sort,
 };
