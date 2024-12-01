@@ -25,7 +25,7 @@ module.exports = {
     program
       .command("price")
       .description(
-        "Processes data from pulled data and calculates price changes"
+        "Processes data from pulled data and calculates price changes and weighted average (wa)"
       )
       .option(
         "--sort <column>",

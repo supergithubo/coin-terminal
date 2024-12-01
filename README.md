@@ -83,15 +83,15 @@ Use this command to initially pull all top 250 coins on Coingecko (current limit
 
 `node cli.js price`
 
-Processes data from pulled data and calculates price changes
+Processes data from pulled data and calculates price changes and weighted average (wa)
 
 ### options
 
-- `--sort <column>` Sort by specified column (e.g., `price_1d`, `price_7d`, `price_30d`, `price_60d`, `price_90d`)
+- `--sort <column>` Sort by specified column (e.g., `price_1d`, `price_7d`, `price_30d`, `price_60d`, `price_90d`, `wa_14`, `wa_30`, `wa_60`, `wa_90`)
 - `--order <asc|desc>` Specify sorting order: `asc` for ascending, `desc` for descending (default: `desc`)
 - `--above <interval>` Filter the results to only show positive price change for a specified interval (`price_1d`, `price_7d`, `price_30d`, `price_60d`, `price_90d`)
 - `--below <interval>` Filter the results to only show negative price change for a specified interval (`price_1d`, `price_7d`, `price_30d`, `price_60d`, `price_90d`)
-- `--category <category>`  Filter the results by category (e.g., 'Smart Contract Platform')
+- `--category <category>` Filter the results by category (e.g., 'Smart Contract Platform')
 - `-h, --help` display help for command
 
 ## `mcap`
@@ -106,7 +106,7 @@ Processes data from pulled data and calculates market cap changes and rank chang
 - `--order <asc|desc>` Specify sorting order: `asc` for ascending, `desc` for descending (default: `desc`)
 - `--above <interval>` Filter the results to only show positive mcap change for a specified interval (`mcap_1d`, `mcap_7d`, `mcap_30d`, `mcap_60d`, `mcap_90d`)
 - `--below <interval>` Filter the results to only show negative mcap change for a specified interval (`mcap_1d`, `mcap_7d`, `mcap_30d`, `mcap_60d`, `mcap_90d`)
-- `--category <category>`  Filter the results by category (e.g., 'Smart Contract Platform')
+- `--category <category>` Filter the results by category (e.g., 'Smart Contract Platform')
 - `-h, --help` display help for command
 
 ## `category`
