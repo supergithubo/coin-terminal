@@ -80,13 +80,17 @@ function colorizeAndPadStart2(value, padding, noformat) {
   if (numValue > 1000) {
     return chalk.blue(padStart(formattedValue, padding));
   } else if (numValue > 100) {
-    return chalk.green(padStart(formattedValue, padding));
+    return chalk.cyan(padStart(formattedValue, padding));
   } else if (numValue > 0) {
-    return chalk.yellow(padStart(formattedValue, padding));
-  } else if (numValue < 0) {
-    return chalk.red(padStart(formattedValue, padding));
-  } else {
+    return chalk.green(padStart(formattedValue, padding));
+  } else if (numValue == 0) {
     return chalk.white(padStart(formattedValue, padding));
+  } else if (numValue > -100) {
+    return chalk.yellow(padStart(formattedValue, padding));
+  } else if (numValue > -1000) {
+    return chalk.magenta(padStart(formattedValue, padding));
+  } else {
+    return chalk.red(padStart(formattedValue, padding));
   }
 }
 
