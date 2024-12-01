@@ -14,6 +14,10 @@ const validSortColumns = [
   "price_30d",
   "price_60d",
   "price_90d",
+  "wa_14",
+  "wa_30",
+  "wa_60",
+  "wa_90",
 ];
 
 module.exports = {
@@ -25,7 +29,7 @@ module.exports = {
       )
       .option(
         "--sort <column>",
-        "Sort by specified column (e.g., price_1d, price_7d, price_30d, price_60d, price_90d)"
+        "Sort by specified column (e.g., price_1d, price_7d, price_30d, price_60d, price_90d, wa_14, wa_30, wa_60, wa_90)"
       )
       .option(
         "--order <asc|desc>",
@@ -46,11 +50,13 @@ module.exports = {
       )
       .action((options) => {
         let coinsData = JSON.parse(fs.readFileSync("data.json", "utf-8"));
-        let categoriesData = JSON.parse(fs.readFileSync("categories.json", "utf-8"));
+        let categoriesData = JSON.parse(
+          fs.readFileSync("categories.json", "utf-8")
+        );
 
         let resultData = [];
-        coinsData = coinsData.map(coin => {
-          const category = categoriesData.find(cat => cat.id === coin.id);
+        coinsData = coinsData.map((coin) => {
+          const category = categoriesData.find((cat) => cat.id === coin.id);
           return { ...coin, categories: category ? category.categories : [] };
         });
 
@@ -106,6 +112,34 @@ module.exports = {
               price_30d: util.formatWithPlusSign(price30d),
               price_60d: util.formatWithPlusSign(price60d),
               price_90d: util.formatWithPlusSign(price90d),
+              wa_14: util.formatWithPlusSign(
+                (price1d * 0.1 + price7d * 0.7 + price14d * 1.4) /
+                  (0.1 + 0.7 + 1.4)
+              ),
+              wa_30: util.formatWithPlusSign(
+                (price1d * 0.1 +
+                  price7d * 0.7 +
+                  price14d * 1.4 +
+                  price30d * 3) /
+                  (0.1 + 0.7 + 1.4 + 3)
+              ),
+              wa_60: util.formatWithPlusSign(
+                (price1d * 0.1 +
+                  price7d * 0.7 +
+                  price14d * 1.4 +
+                  price30d * 3 +
+                  price60d * 6) /
+                  (0.1 + 0.7 + 1.4 + 3 + 6)
+              ),
+              wa_90: util.formatWithPlusSign(
+                (price1d * 0.1 +
+                  price7d * 0.7 +
+                  price14d * 1.4 +
+                  price30d * 3 +
+                  price60d * 6 +
+                  price90d * 9) /
+                  (0.1 + 0.7 + 1.4 + 3 + 6 + 9)
+              ),
             });
           }
         });
@@ -116,10 +150,14 @@ module.exports = {
           resultData = resultData.filter((row) => {
             if (filterInterval === "price_1d" && row.price_1d > 0) return true;
             if (filterInterval === "price_7d" && row.price_7d > 0) return true;
-            if (filterInterval === "price_14d" && row.price_14d > 0) return true;
-            if (filterInterval === "price_30d" && row.price_30d > 0) return true;
-            if (filterInterval === "price_60d" && row.price_60d > 0) return true;
-            if (filterInterval === "price_90d" && row.price_90d > 0) return true;
+            if (filterInterval === "price_14d" && row.price_14d > 0)
+              return true;
+            if (filterInterval === "price_30d" && row.price_30d > 0)
+              return true;
+            if (filterInterval === "price_60d" && row.price_60d > 0)
+              return true;
+            if (filterInterval === "price_90d" && row.price_90d > 0)
+              return true;
             return false;
           });
         }
@@ -130,10 +168,14 @@ module.exports = {
           resultData = resultData.filter((row) => {
             if (filterInterval === "price_1d" && row.price_1d < 0) return true;
             if (filterInterval === "price_7d" && row.price_7d < 0) return true;
-            if (filterInterval === "price_14d" && row.price_14d < 0) return true;
-            if (filterInterval === "price_30d" && row.price_30d < 0) return true;
-            if (filterInterval === "price_60d" && row.price_60d < 0) return true;
-            if (filterInterval === "price_90d" && row.price_90d < 0) return true;
+            if (filterInterval === "price_14d" && row.price_14d < 0)
+              return true;
+            if (filterInterval === "price_30d" && row.price_30d < 0)
+              return true;
+            if (filterInterval === "price_60d" && row.price_60d < 0)
+              return true;
+            if (filterInterval === "price_90d" && row.price_90d < 0)
+              return true;
             return false;
           });
         }
@@ -211,6 +253,22 @@ module.exports = {
             "price_90d".length,
             ...resultData.map((row) => row.price_90d.length + 2)
           ),
+          wa_14: Math.max(
+            "wa_14".length,
+            ...resultData.map((row) => row.wa_14.length + 2)
+          ),
+          wa_30: Math.max(
+            "wa_30".length,
+            ...resultData.map((row) => row.wa_30.length + 2)
+          ),
+          wa_60: Math.max(
+            "wa_60".length,
+            ...resultData.map((row) => row.wa_60.length + 2)
+          ),
+          wa_90: Math.max(
+            "wa_90".length,
+            ...resultData.map((row) => row.wa_90.length + 2)
+          ),
         };
 
         console.log(
@@ -234,14 +292,26 @@ module.exports = {
             `${chalk.white(
               util.padStart("price_60d", columnWidths.price_60d)
             )} | ` +
-            `${chalk.white(util.padStart("price_90d", columnWidths.price_90d))}`
+            `${chalk.white(
+              util.padStart("price_90d", columnWidths.price_90d)
+            )} | ` +
+            `${chalk.white(
+              util.padStart("wa_14", columnWidths.wa_14 - 1)
+            )} | ` +
+            `${chalk.white(
+              util.padStart("wa_30", columnWidths.wa_30 - 1)
+            )} | ` +
+            `${chalk.white(
+              util.padStart("wa_60", columnWidths.wa_60 - 1)
+            )} | ` +
+            `${chalk.white(util.padStart("wa_90", columnWidths.wa_90 - 1))} | `
         );
 
         resultData.forEach((row) => {
           if (skipTickers.includes(row.ticker.toUpperCase())) {
             return;
           }
-          
+
           console.log(
             `${chalk.white(util.pad(row.rank, columnWidths.rank))} | ` +
               `${chalk.yellow(util.pad(row.ticker, columnWidths.ticker))} | ` +
@@ -271,6 +341,22 @@ module.exports = {
               `${util.colorizeAndPadStart(
                 row.price_90d + "%",
                 columnWidths.price_90d
+              )} |` +
+              `${util.colorizeAndPadStart2(
+                row.wa_14 + "%",
+                columnWidths.wa_14
+              )} |` +
+              `${util.colorizeAndPadStart2(
+                row.wa_30 + "%",
+                columnWidths.wa_30
+              )} |` +
+              `${util.colorizeAndPadStart2(
+                row.wa_60 + "%",
+                columnWidths.wa_60
+              )} |` +
+              `${util.colorizeAndPadStart2(
+                row.wa_90 + "%",
+                columnWidths.wa_90
               )} |`
           );
         });
