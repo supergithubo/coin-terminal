@@ -1,5 +1,147 @@
 {
     "apiKey": "",
     "reqPerMin": 25,
-    "skip": []
+    "skip": [
+        "USDT",
+        "USDC",
+        "STETH",
+        "WSTETH",
+        "WBTC",
+        "WETH",
+        "WEETH",
+        "USDS",
+        "DAI",
+        "USDE",
+        "FDUSD",
+        "WETH",
+        "RETH",
+        "SOLVBTC",
+        "METH",
+        "EZETH",
+        "CBBTC",
+        "EETH",
+        "CBETH",
+        "LBTC",
+        "SOLVBTC.BBN",
+        "RSETH",
+        "BTC.B",
+        "SUPEROETHB",
+        "FRXETH",
+        "EBTC",
+        "TBTC",
+        "SWETH",
+        "ETHX",
+        "SFRXETH",
+        "LSETH",
+        "PUMPBTC",
+        "JUPSOL",
+        "BNSOL",
+        "USDD",
+        "TUSD",
+        "USDY",
+        "USD0",
+        "USDC.E",
+        "SAVAX",
+        "USDB",
+        "USYC",
+        "CMETH",
+        "XAUT",
+        "PAXG",
+        "FRAX",
+        "PYUSD",
+        "BUSD"
+    ],
+    "categoryFix": {
+        "remove": [
+            {
+                "target": ".*?Portfolio.*?",
+                "scope": "any",
+                "except": []
+            },
+            {
+                "target": ".*?Ecosystem.*?",
+                "scope": "any",
+                "except": []
+            },
+            {
+                "target": ".*?Ecocystem.*?",
+                "scope": "any",
+                "except": []
+            },
+            {
+                "target": ".*?Holdings.*?",
+                "scope": "any",
+                "except": []
+            },
+            {
+                "target": ".*?Index.*?",
+                "scope": "any",
+                "except": []
+            },
+            {
+                "target": ".*?Alleged.*?",
+                "scope": "any",
+                "except": []
+            },
+            {
+                "target": ".*?Murad.*?",
+                "scope": "any",
+                "except": []
+            },
+            {
+                "target": ".*?The Boy’s Club*?",
+                "scope": "any",
+                "except": []
+            },
+            {
+                "target": ".*?Elon Musk-Inspired*?",
+                "scope": "any",
+                "except": []
+            }
+        ],
+        "modify": [
+            {
+                "id": "ripple",
+                "add": [
+                    "Layer 1 (L1)"
+                ]
+            },
+            {
+                "id": "stellar",
+                "add": [
+                    "Layer 1 (L1)"
+                ]
+            },
+            {
+                "id": "chainlink",
+                "remove": [
+                    "Smart Contract Platform"
+                ]
+            },
+            {
+                "id": "litecoin",
+                "add": [
+                    "Layer 1 (L1)"
+                ]
+            },
+            {
+                "id": "ethereum-classic",
+                "add": [
+                    "Layer 1 (L1)"
+                ]
+            },
+            {
+                "id": "polygon-ecosystem-token",
+                "add": [
+                    "SideChain"
+                ]
+            },
+            {
+                "id": "vechain",
+                "add": [
+                    "Layer 1 (L1)"
+                ]
+            }
+        ]
+    }
 }
