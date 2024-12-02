@@ -81,13 +81,13 @@ function colorizeAndPadStart2(value, padding, noformat) {
     return chalk.blue(padStart(formattedValue, padding));
   } else if (numValue > 100) {
     return chalk.cyan(padStart(formattedValue, padding));
-  } else if (numValue > 0) {
+  } else if (numValue > 20) {
     return chalk.green(padStart(formattedValue, padding));
-  } else if (numValue == 0) {
+  } else if (numValue > 0) {
     return chalk.white(padStart(formattedValue, padding));
-  } else if (numValue > -100) {
+  } else if (numValue > -20) {
     return chalk.yellow(padStart(formattedValue, padding));
-  } else if (numValue > -1000) {
+  } else if (numValue > -100) {
     return chalk.magenta(padStart(formattedValue, padding));
   } else {
     return chalk.red(padStart(formattedValue, padding));
